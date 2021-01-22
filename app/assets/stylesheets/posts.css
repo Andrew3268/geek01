@@ -1,0 +1,12 @@
+.index-wrapper{}
+.sale-section{}
+.gift-section{}
+.featured-section{}
+.index-common .card{float:left;width:23%;margin:1%;border:1px solid #ccc;}
+.index-common .card .img-box{width:270px;height:200px;position:relative;}
+.index-common .card .img-box img{width:80%;height:80%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);}
+.index-common .card .inner{padding:10px;}
+.index-common .card .inner p{}
+.index-common .card .inner p span{text-decoration:line-through;}
+.view_more{text-align:center;margin:30px 0;}
+.view_more a{background:#08f;color:#fff;padding:10px 25px;border-radius:20px;}
