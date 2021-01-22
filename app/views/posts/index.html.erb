@@ -7,6 +7,10 @@
         <%= link_to 'Sign up', new_user_registration_path %>
         <%= link_to 'Sign in', new_user_session_path %> 
       <% end %>
+
+      <% if current_user && current_user.admin %>
+        <p>I am Admin!!</p>
+      <% end %>
     </div>
 
     <h1>Posts | <%= link_to 'New Post', new_post_path %></h1>
@@ -39,10 +43,6 @@
     </div>
 
 
-
-
-
-   
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>

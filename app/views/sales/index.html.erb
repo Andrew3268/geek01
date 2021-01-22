@@ -1,0 +1,27 @@
+<div class="index-wrapper">
+  <div class="wrap">
+    <div class="visual">
+      <% if current_user %>
+        <%= link_to 'Sing out', destroy_user_session_path, method: :delete %>
+       <% else %>
+        <%= link_to 'Sign up', new_user_registration_path %>
+        <%= link_to 'Sign in', new_user_session_path %> 
+      <% end %>
+    </div>
+
+    <h1>Sales | <%= link_to 'New Sale', new_sale_path %></h1>
+
+  
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.title %></td>
+        <td><%= sale.body %></td>
+        <td><%= sale.user_id %></td>
+        <td><%= link_to 'Show', sale %></td>
+        <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
+        <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  
+  </div>
+</div>
