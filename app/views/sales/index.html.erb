@@ -1,27 +1,37 @@
-<div class="index-wrapper">
+<div class="index-wrap">
   <div class="wrap">
+
     <div class="visual">
-      <% if current_user %>
-        <%= link_to 'Sing out', destroy_user_session_path, method: :delete %>
-       <% else %>
-        <%= link_to 'Sign up', new_user_registration_path %>
-        <%= link_to 'Sign in', new_user_session_path %> 
-      <% end %>
+        <% if current_user && current_user.admin %>
+          <p>I AM ADMIN!!</p>
+          <%= link_to 'New Sale', new_sale_path %>
+        <% end %>
+      </h1>
     </div>
 
-    <h1>Sales | <%= link_to 'New Sale', new_sale_path %></h1>
-
-  
-    <% @sales.each do |sale| %>
-      <tr>
-        <td><%= sale.title %></td>
-        <td><%= sale.body %></td>
-        <td><%= sale.user_id %></td>
-        <td><%= link_to 'Show', sale %></td>
-        <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
-        <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% if current_user && current_user.admin %>
+      <div class="index-amdin" data-turbolinks="false">
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      </div>
     <% end %>
-  
-  </div>
-</div>
+
+    <div class="product-border clearfix">
+      <% @sales.each do |sale| %>
+        <div class="card">
+          <div class="image-box">
+            <a href="/sales/<%= sale.id %>" data-turbolinks="false"><img src="<%= sale.s_image %>" alt="<%= sale.s_title %>" title="<%= sale.s_title %>"></a>
+          </div>
+          <div class="inner">
+            <p class="line-break-01" data-turbolinks="false"><%= link_to sale.s_title, sale%></p>
+              <span class="list_price"><%= number_to_currency(sale.s_was_price, locale: :kr) %>원</span>
+              <span class="current_price"><%= number_to_currency(sale.s_is_price, locale: :kr) %>원</span>
+          </div>
+            <% hotdeal_pct = 0 %>
+            <% hotdeal_pct =  (sale.s_was_price - sale.s_is_price) / sale.s_was_price * 100 %>
+            <div class="pct"><p><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</p></div>
+        </div>
+      <% end %>
+    </div>
+    
+  </div><!--./wrap-->
+</div><!--./index-wrap->

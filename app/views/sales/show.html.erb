@@ -1,19 +1,65 @@
-<p id="notice"><%= notice %></p>
+<div class="show-wrap">
+  <div class="wrap">
 
-<p>
-  <strong>Title:</strong>
-  <%= @sale.title %>
-</p>
+    <div class="container clearfix">
+      <a href="/sales"><img class="go_back" src="<%=asset_path 'go_back.png' %>" alt="Go bact to home" /></a>
+      <div class="image-box clearfix">
+        <img src="<%= @sale.s_image %>" alt="<%= @sale.s_title %>" title="<%= @sale.s_title %>" />
+      </div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @sale.body %>
-</p>
+      <div class="title">
+        <h2 class="line-break-02"><%= @sale.s_title %></h2>
+      </div>
+      <h2 class="summary_title">SUMMARY</h2>
+      <div class="receipt">
+        <!-- Button Section - Text(left) -->
+        <div class="receipt__grid1">
+          <p>상품 가격</p>
+            <% hotdeal_pct = 0 %>
+            <% hotdeal_pct =  (@sale.s_was_price.to_i - @sale.s_is_price.to_i) / @sale.s_was_price * 100 %>
+            <p>(<%= number_to_percentage(hotdeal_pct, precision: 0) %> off) 할인</p>
+      
+          <hr>
 
-<p>
-  <strong>User:</strong>
-  <%= @sale.user_id %>
-</p>
+          <p class="total_text">Total</p>
+        </div>
 
-<%= link_to 'Edit', edit_sale_path(@sale) %> |
-<%= link_to 'Back', sales_path %>
+        <!-- Summary Section - Price(right) -->
+        <div class="receipt__grid2">
+          <p><em>-</em> <%= number_to_currency(@sale.s_was_price, locale: :kr) %>원</p>
+          <% discount_price = 0 %>
+          <% discount_price = @sale.s_was_price.to_f - @sale.s_is_price.to_f %>
+          <p>- <%= number_to_currency(discount_price, locale: :kr) %>원</p>
+          
+          <hr>
+
+          <p class="total_price "><%= number_to_currency(@sale.s_is_price, locale: :kr) %>원</p>
+
+          
+        </div>
+      </div>
+
+      <div class="total-notice">
+        <p>쿠팡에서 <span><%= number_to_percentage(hotdeal_pct, precision: 0) %>off</span> 할인 중이며</p>
+        <p><span><%= number_to_currency(discount_price, locale: :kr) %>원</span> 싸게 살 수 있어요.</p>
+      </div>
+
+      <!-- Button Section -->
+      <div class="btn">
+        <a class="amz_btn" target="_blank" href="<%= @sale.s_link %>">쿠팡 최저가 알아보기</a>
+
+        <% if current_user && current_user.admin %>
+          <div class="admin">
+            <%= link_to 'Back', sales_path %> | 
+            <%= link_to 'Edit', edit_sale_path(@sale) %> |
+            <%= link_to 'Destroy', @sale, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% end %>
+      </div>
+
+    
+    </div><!--./container-->
+
+
+  </div>
+</div>

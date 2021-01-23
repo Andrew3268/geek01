@@ -4,7 +4,7 @@ class SalesController < ApplicationController
   # GET /sales
   # GET /sales.json
   def index
-    @sales = Sale.all
+    @sales = Sale.all.order("created_at DESC")
   end
 
   # GET /sales/1
@@ -25,7 +25,7 @@ class SalesController < ApplicationController
   # POST /sales.json
   def create
     @sale = Sale.new(sale_params)
-    @sale.user = current_user.admin
+    @sale.user = current_user
     respond_to do |format|
       if @sale.save
         format.html { redirect_to @sale, notice: 'Sale was successfully created.' }
@@ -69,6 +69,7 @@ class SalesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sale_params
-      params.require(:sale).permit(:title, :body, :user_id)
+      params.require(:sale).permit(:s_title, :s_link, :user_id, :s_source, :s_hashtag, :s_video, :s_description, :s_is_price, :s_was_price, :s_pct, :s_image, :s_rocket)
     end
 end
+

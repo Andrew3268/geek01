@@ -4,9 +4,18 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :body %>
-    <%= f.association :user %>
+    <%= f.input :s_title %>
+    <%= f.input :s_link %>
+    <%= f.input :s_image %>
+    <%= f.input :s_rocket %>
+    <%= f.input :s_source %>
+    <%= f.input :s_hashtag %>
+    <%= f.input :s_is_price %>
+    <%= f.input :s_was_price %>
+    <%= f.input :s_pct %>
+    <!-- <%= f.association :user %> -->
+    <!-- <%= f.input :s_video %> -->
+    <!-- <%= f.input :s_description %> -->
   </div>
 
   <div class="form-actions">
