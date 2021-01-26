@@ -17,7 +17,7 @@
           <p>상품 가격</p>
             <% hotdeal_pct = 0 %>
             <% hotdeal_pct =  (@sale.s_was_price.to_i - @sale.s_is_price.to_i) / @sale.s_was_price * 100 %>
-            <p>(<%= number_to_percentage(hotdeal_pct, precision: 0) %> off) 할인</p>
+            <p><%= number_to_percentage(hotdeal_pct, precision: 0) %> OFF</p>
       
           <hr>
 
@@ -39,10 +39,10 @@
         </div>
       </div>
 
-      <div class="total-notice">
-        <p>쿠팡에서 <span><%= number_to_percentage(hotdeal_pct, precision: 0) %>off</span> 할인 중이며</p>
-        <p><span><%= number_to_currency(discount_price, locale: :kr) %>원</span> 싸게 살 수 있어요.</p>
-      </div>
+      <!-- <div class="total-notice">
+        <p>쿠팡에서 <span><%= number_to_percentage(hotdeal_pct, precision: 0) %>off</span> 할인 중이며 
+        <span><%= number_to_currency(discount_price, locale: :kr) %>원</span> 싸게 살 수 있어요.</p>
+      </div> -->
 
       <!-- Button Section -->
       <div class="btn">

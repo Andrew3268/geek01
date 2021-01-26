@@ -42,9 +42,9 @@
 .show-wrap .total_text{font-size:20px;}
 .show-wrap .btn{float:right;width:50%;text-align:center;}
 .show-wrap .btn a.amz_btn{background:#C7B3E5;color:#fff;display:block;padding:10px;font-size:15px;border-radius:20px;}
-.show-wrap .total-notice{float:right;width:50%;text-align:center;background:#C7B3E5;color:#fff;border-radius:20px;padding:15px 15px 10px 15px;margin-bottom:15px;}
-.show-wrap .total-notice p{margin-bottom:5px;}
-.show-wrap .total-notice p span{background:#fff;color:#C7B3E5;padding:5px;border-radius:10px;}
+/*.show-wrap .total-notice{float:right;width:50%;color:#000;padding:15px 15px 10px 15px;margin-bottom:15px;}
+.show-wrap .total-notice p{margin-bottom:5px;font-size:13px;}
+.show-wrap .total-notice p span{background:#C7B3E5;color:#fff;padding:5px;border-radius:10px;}*/
 .show-wrap .title{float:left;width:50%;}
 .show-wrap .title h2{font-size:17px;font-weight:300;}
 .show-wrap .admin{text-align:left;}
