@@ -40,6 +40,7 @@ gem 'pg'
 gem 'ed25519', '~> 1.2'
 gem 'bcrypt_pbkdf', '~> 1'
 gem 'irb', require: false
+gem 'capistrano-rails-console', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

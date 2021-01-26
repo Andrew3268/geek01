@@ -1,19 +1,17 @@
 <div class="index-wrap">
   <div class="wrap">
 
-    <div class="visual">
-        <% if current_user && current_user.admin %>
-          <p>I AM ADMIN!!</p>
-          <%= link_to 'New Sale', new_sale_path %>
-        <% end %>
-      </h1>
-    </div>
-
     <% if current_user && current_user.admin %>
       <div class="index-amdin" data-turbolinks="false">
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
       </div>
     <% end %>
+
+    <div class="where-hashtag">
+      <% if params[:name].present? %>
+        <p><span class="hashtag-through">#<%= params[:name] %></span></p>
+      <% end %>
+    </div>
 
     <div class="product-border clearfix">
       <% @sales.each do |sale| %>

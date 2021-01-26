@@ -12,6 +12,11 @@ class SalesController < ApplicationController
   def show
   end
 
+  def hashtags
+    tag = Tag.find_by(name: params[:name])
+    @sales = tag.sales.order("created_at DESC")
+  end
+
   # GET /sales/new
   def new
     @sale = Sale.new
