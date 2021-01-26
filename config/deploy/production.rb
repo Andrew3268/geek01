@@ -8,6 +8,7 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 
 server '159.65.128.139', user: 'deploy', roles: %w{app db web}
+set :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 
 
