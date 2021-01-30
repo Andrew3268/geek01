@@ -1,16 +1,16 @@
 <div class="index-wrap">
   <div class="wrap">
 
-    <div class="visual">
-        <% if current_user && current_user.admin %>
-          <p>I AM ADMIN!!</p>
-          <%= link_to 'New Sale', new_sale_path %>
-        <% end %>
-      </h1>
+    <div class="visual clearfix">
+      <p>너무나 듣고 싶은 한마디</p>
+      <h2>사랑해 보다 오늘 세일해</h2>
+      <%= render 'sales/categories' %>
+      
     </div>
 
     <% if current_user && current_user.admin %>
       <div class="index-amdin" data-turbolinks="false">
+        <%= link_to 'New Sale', new_sale_path %>
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
       </div>
     <% end %>
@@ -19,7 +19,8 @@
       <% @sales.each do |sale| %>
         <div class="card">
           <div class="image-box">
-            <a href="/sales/<%= sale.id %>" data-turbolinks="false"><img src="<%= sale.s_image %>" alt="<%= sale.s_title %>" title="<%= sale.s_title %>"></a>
+            <!-- <a href="/sales/<%= sale.id %>" data-turbolinks="false"><img src="<%= sale.s_image %>" alt="<%= sale.s_title %>" title="<%= sale.s_title %>"></a> -->
+            <%= link_to image_tag(sale.s_image), sale %>
           </div>
           <div class="inner">
             <p class="line-break-01" data-turbolinks="false"><%= link_to sale.s_title, sale%></p>

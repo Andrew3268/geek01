@@ -1,3 +1,5 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
 
 h1,h2,h3,h4,h5,h6,p,ul,li,address,form,fieldset,legend,input,button,dl,dt,dd,table,thead,tbody,tfoot,tr,th,td{margin:0;padding:0;font-family:inherit;}
 a img{border:0;}/* a태그로 감싼 이미지의 파란 테두리 삭제 (ie9-10) */
@@ -32,3 +34,90 @@ body{margin:0;padding:0;font-size:15px;color:#3d3d3d;line-height:1.5;font-weight
   .layout{min-width:0;}
   .wrap{width:auto;margin:0 5%;}
 }
+
+
+
+/* _categories.html.erb */
+.visual{font-family:'Gugi', cursive;}
+.visual h2{font-size:30px;}
+.visual .category-pc{}
+.visual .category-pc ul{padding:10px;}
+.visual .category-pc ul li{display:inline-block;margin-right:20px;text-transform:uppercase;}
+.visual .category-pc ul li a{font-size:17px;}
+.visual .category-mobile{display:none;}
+.cat-common nav.fixed{position:fixed;top:0;left:0;padding:1em;z-index:9999;background:#fff;width:100%;border-bottom:1px solid #ccc;text-align:center;}
+.cat-common nav.fixed a{}
+.category-pc{display:-webkit-box;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction: normal;flex-flow: row wrap;-webkit-box-pack:center;justify-content:center;}
+.category-pc:before, .category-pc:after{content:"";background:#636363;padding:0.5px;-webkit-box-flex:100%;flex:100%;visibility:visible}
+
+@media screen and (max-width:640px){
+  .visual{margin:0 3%;}
+  .visual h1{margin-left:8px;}
+  .visual ul{display:block;margin:0 auto;overflow-x:scroll;white-space:nowrap;overflow-y:hidden;}
+  .visual ul li{float:none;display:inline-block;margin-right:10px;line-height:30px;text-transform:uppercase;}
+  .visual ul li a{font-size:15px;}
+  .visual .category-pc{display:none;}
+  .visual .category-mobile{display:block;border-bottom:1px solid #ccc;}
+  .visual .category-mobile ul.left{float:left;width:80%;}
+  .visual .category-mobile ul.right{float:left;width:20%;text-align:center;}
+}
+
+@media screen and (min-width:641px) and (max-width:1199px){
+  .visual{margin:0 1%;}
+  .visual ul{display:block;margin:0 auto;overflow-x:scroll;white-space:nowrap;overflow-y:hidden;}
+  .visual ul li{float:none;display:inline-block;margin-right:10px;line-height:30px;text-transform:uppercase;}
+  .visual ul li a{font-size:15px;}
+  .visual .category-pc{display:none;}
+  .visual .category-mobile{display:block;border-bottom:1px solid #ccc;}
+  .visual .category-mobile ul.left{float:left;width:80%;}
+  .visual .category-mobile ul.right{float:left;width:20%;text-align:center;}
+}
+
+
+.navbar-fixed{
+  top: 0;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+}
+
+
+/*
+nav.sticky-menu{}
+nav.sticky-menu ul{}
+nav.sticky-menu ul li{float:left;}
+nav.sticky-menu ul li a{}
+#menu.sticky {
+  position:fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(0);
+  width: 100%;
+}
+#menu {
+  transition: left 0.7s;
+  left: 100%;
+  transform: translateX(-100%);
+  justify-content: space-between;
+  background: #C7B3E5;
+  color: #000;
+  position: relative;
+  z-index: 10;
+}
+#menu:hover {
+  background: #116698;
+}
+
+#menu .item {
+  flex: 1;
+  cursor: pointer;
+  padding: 1em;
+  text-align: center;
+}
+#menu .item:hover {
+  background: #157fbe;
+}
+#menu .item:hover .submenu {
+  display: block;
+}
+*/

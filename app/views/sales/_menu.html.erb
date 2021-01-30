@@ -1,0 +1,51 @@
+<!-- <header>
+  <div class="wr_Content flex"><a id="logo" href="/">LOGO</a>
+    <nav class="flex"><a href="">button_1</a><a href="">button_2</a><a href="">button_3</a>
+    </nav>
+    <div id="search">
+      <input type="text" placeholder="Поиск по сайту"/>
+    </div>
+  </div>
+</header> -->
+
+<nav class="sticky-menu" id="menu">
+  <ul class="left">
+    <li class="item"><a href="/sales">Everything</a></li>
+    <li class="item"><a href="/sales/hashtag/테스트1">테스트1,</a></li>
+    <li class="item"><a href="/sales/hashtag/테스트2">테스트2,</a></li>
+    <li class="item"><a href="/sales/hashtag/electronics">Electronics,</a></li>
+    <li class="item"><a href="/sales/hashtag/home">Home,</a></li>
+    <li class="item"><a href="/sales/hashtag/kitchen">Kitchen,</a></li>
+    <li class="item"><a href="/sales/hashtag/fashion">Fashion,</a></li>
+    <li class="item"><a href="/sales/hashtag/outdoor">Outdoor,</a></li>
+    <li class="item"><a href="/sales/hashtag/pet_supplies">Pet Supplies</a></li>
+  </ul>
+  <ul class="right">
+    <li class="item"><a href="#n">+ More</a></li>
+  </ul>
+</nav>
+
+
+
+      
+
+<script type="text/javascript">
+  function sticky() {
+  var nav = document.querySelector("#menu"),
+      H = nav.offsetHeight,
+      nav_prev = document.querySelector("header");
+
+  function stickyOn(){
+    nav.classList.add("sticky");
+    nav_prev.style.marginBottom = H + 'px';
+  }
+  function stickyOff() {
+    nav.classList.remove("sticky");
+    nav_prev.style.marginBottom = '';
+  }
+
+  ( window.scrollY > H ) ? stickyOn() : stickyOff();
+
+  }
+  document.addEventListener("scroll", sticky);
+</script>

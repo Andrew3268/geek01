@@ -1,11 +1,11 @@
 <div class="index-wrap">
   <div class="wrap">
 
-    <% if current_user && current_user.admin %>
-      <div class="index-amdin" data-turbolinks="false">
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-      </div>
-    <% end %>
+    <div class="visual clearfix">
+      <p>너무나 듣고 싶은 한마디</p>
+      <h2>사랑해 보다 오늘 세일해</h2>
+      <%= render 'sales/categories' %>
+    </div>
 
     <div class="where-hashtag">
       <% if params[:name].present? %>
