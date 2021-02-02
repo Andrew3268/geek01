@@ -1,4 +1,4 @@
-<div class="show-wrap">
+트<div class="show-wrap">
   <div class="wrap">
 
     <div class="container clearfix">
@@ -15,9 +15,14 @@
         <!-- Button Section - Text(left) -->
         <div class="receipt__grid1">
           <p>상품 가격</p>
-            <% hotdeal_pct = 0 %>
-            <% hotdeal_pct =  (@sale.s_was_price.to_i - @sale.s_is_price.to_i) / @sale.s_was_price * 100 %>
-            <p><%= number_to_percentage(hotdeal_pct, precision: 0) %> OFF</p>
+          <% hotdeal_pct = 0 %>
+          <% hotdeal_pct =  (@sale.s_was_price.to_i - @sale.s_is_price.to_i) / @sale.s_was_price * 100 %>
+          <p><%= number_to_percentage(hotdeal_pct, precision: 0) %> OFF</p>
+          <% if @sale.s_source.present? %>
+          <% else %>
+            <p>로켓배송</p>
+          <% end %>
+          
       
           <hr>
 
@@ -30,7 +35,14 @@
           <% discount_price = 0 %>
           <% discount_price = @sale.s_was_price.to_f - @sale.s_is_price.to_f %>
           <p>- <%= number_to_currency(discount_price, locale: :kr) %>원</p>
-          
+          <% if @sale.s_source.present? %>
+          <% else %>
+            <% if @sale.s_rocket.present? %>
+              <p>YES</p>
+            <% else %>
+              <p>NO</p>
+            <% end %>
+          <% end %>
           <hr>
 
           <p class="total_price "><%= number_to_currency(@sale.s_is_price, locale: :kr) %>원</p>
@@ -56,6 +68,17 @@
           </div>
         <% end %>
       </div>
+
+      <% if @sale.s_spare_61.present? %>
+        <% if @sale.s_spare_61 <= 1 %>
+         <p>$10</p>
+        <% elsif @sale.s_spare_61 <= 2 %>
+         <p>$12</p>
+         <% elsif @sale.s_spare_61 <= 3 %>
+         <p>$14</p>
+        <% end %>
+      <% end %>
+
 
     
     </div><!--./container-->

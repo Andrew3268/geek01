@@ -13,90 +13,21 @@
 }
 
 
-.index-hero-tabs{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 60vh;
-  position: relative;
-  background: #eee;
-  text-align: center;
-  padding: 0 2em;
-}
-
+.index-hero-tabs{display:flex;flex-direction:column;justify-content:center;align-items:center;height:60vh;position:relative;background:#d5c6ec;text-align:center;padding: 0 2em;}
 .index-slide{margin:50px 0;}
 .more-btn{text-align:center;margin-bottom:50px;}
 .more-btn a{background:#08f;padding:10px 25px;color:#fff;border-radius:20px;}
-
-
-.index-hero-tabs h1{
-  font-size: 2rem;
-  margin: 0;
-  letter-spacing: 1rem;
-}
-
+.index-hero-tabsh1{font-size:2rem;margin:0;letter-spacing:1rem;}
 .index-slide h1{font-size:20px;} 
-
-.index-hero-tabs h3,
-.index-slide h3 {
-  font-size: 1rem;
-  letter-spacing: 0.3rem;
-  opacity: 0.6;
-}
-
-.index-hero-tabs-container {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  background: #fff;
-  z-index: 10;
-}
-.index-hero-tabs-container--top {
-  position: fixed;
-  top: 0;
-}
-
-.index-hero-tab {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  color: #000;
-  letter-spacing: 0.1rem;
-  transition: all 0.5s ease;
-  font-size: 0.8rem;
-}
-.index-hero-tab:hover {
-  color: white;
-  background: rgba(102, 177, 241, 0.8);
-  transition: all 0.5s ease;
-}
-
-.index-hero-tab-slider {
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  height: 6px;
-  background: #66B1F1;
-  transition: left 0.3s ease;
-}
+.index-hero-tabs h3, .index-slide h3{font-size:1rem;letter-spacing:0.3rem;opacity:0.6;}
+.index-hero-tabs-container{display:flex;flex-direction:row;position:absolute;bottom:0;width:100%;height:60px;box-shadow:0 0 20px rgba(0, 0, 0, 0.1);background:#fff;z-index:10;}
+.index-hero-tabs-container--top{position:fixed;top:0;}
+.index-hero-tab{display:flex;justify-content:center;align-items:center;flex:1;color:#000;letter-spacing:0.1rem;transition:all 0.5s ease;font-size:0.8rem;}
+.index-hero-tab:hover{color:#fff;background:#c7b3e5;/*background: rgba(102, 177, 241, 0.8);*/transition:all 0.5s ease;}
+.index-hero-tab-slider{position:absolute;bottom:0;width:0;height:6px;background:#c7b3e5;transition:left 0.3s ease;}
 
 @media (min-width: 800px) {
-  .index-hero-tabs h1,
-.index-slide h1 {
-    font-size: 3rem;
-  }
-  .index-hero-tabs h3,
-.index-slide h3 {
-    font-size: 1rem;
-  }
-
-  .index-hero-tab {
-    font-size: 1rem;
-  }
+  .index-hero-tabs h1, .index-slide h1{font-size:3rem;}
+  .index-hero-tabs h3, .index-slide h3{font-size:1rem;}
+  .index-hero-tab{font-size:1rem;}
 }

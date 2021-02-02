@@ -43,12 +43,14 @@ body{margin:0;padding:0;font-size:15px;color:#3d3d3d;line-height:1.5;font-weight
 .visual .category-pc{}
 .visual .category-pc ul{padding:10px;}
 .visual .category-pc ul li{display:inline-block;margin-right:20px;text-transform:uppercase;}
-.visual .category-pc ul li a{font-size:17px;}
+.visual .category-pc ul li a{font-size:15px;background:rgb(241,236,249,0.4);padding:10px;border-radius:10px;}
 .visual .category-mobile{display:none;}
+
 .cat-common nav.fixed{position:fixed;top:0;left:0;padding:1em;z-index:9999;background:#fff;width:100%;border-bottom:1px solid #ccc;text-align:center;}
 .cat-common nav.fixed a{}
+.cat-common .navbar{padding:5px;}
 .category-pc{display:-webkit-box;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction: normal;flex-flow: row wrap;-webkit-box-pack:center;justify-content:center;}
-.category-pc:before, .category-pc:after{content:"";background:#636363;padding:0.5px;-webkit-box-flex:100%;flex:100%;visibility:visible}
+.category-pc:before, .category-pc:after{content:"";background:#ccc;padding:0.5px;-webkit-box-flex:100%;flex:100%;visibility:visible}
 
 @media screen and (max-width:640px){
   .visual{margin:0 3%;}
@@ -56,10 +58,12 @@ body{margin:0;padding:0;font-size:15px;color:#3d3d3d;line-height:1.5;font-weight
   .visual ul{display:block;margin:0 auto;overflow-x:scroll;white-space:nowrap;overflow-y:hidden;}
   .visual ul li{float:none;display:inline-block;margin-right:10px;line-height:30px;text-transform:uppercase;}
   .visual ul li a{font-size:15px;}
+  .cat-common .navbar{padding:8px 0;}
   .visual .category-pc{display:none;}
   .visual .category-mobile{display:block;border-bottom:1px solid #ccc;}
   .visual .category-mobile ul.left{float:left;width:80%;}
   .visual .category-mobile ul.right{float:left;width:20%;text-align:center;}
+  .visual .category-mobile ul li a{font-size:15px;background:rgb(241,236,249,0.4);padding:10px;border-radius:10px;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
@@ -74,50 +78,16 @@ body{margin:0;padding:0;font-size:15px;color:#3d3d3d;line-height:1.5;font-weight
 }
 
 
-.navbar-fixed{
-  top: 0;
-  z-index: 100;
-  position: fixed;
-  width: 100%;
-}
+/* From */
+.hotdeal_form{width:1200px;}
+.hotdeal_form .basic_info{width:800px;}
+.hotdeal_form input, .hotdeal_form textarea{display:block;width:100%;height:40px;margin-bottom:20px;border:1px solid #ccc;}
+.hotdeal_form textarea{height:80px;}
+.hotdeal_form trix-editor{min-height:15em;}
+.hotdeal_form label{font-size:13px;}
+.hotdeal_form .pricing div{float:left;;margin:1%;}
+.hotdeal_form .pricing div .promo_code{width:500px;margin-right:1%;}
+.hotdeal_form .pricing div .promo_date{width:300px;}
+.hotdeal_form .form_btn input{margin-top:10px;background:#000;color:#fff;padding:15px 0;}
 
 
-/*
-nav.sticky-menu{}
-nav.sticky-menu ul{}
-nav.sticky-menu ul li{float:left;}
-nav.sticky-menu ul li a{}
-#menu.sticky {
-  position:fixed;
-  top: 0;
-  left: 0;
-  transform: translateX(0);
-  width: 100%;
-}
-#menu {
-  transition: left 0.7s;
-  left: 100%;
-  transform: translateX(-100%);
-  justify-content: space-between;
-  background: #C7B3E5;
-  color: #000;
-  position: relative;
-  z-index: 10;
-}
-#menu:hover {
-  background: #116698;
-}
-
-#menu .item {
-  flex: 1;
-  cursor: pointer;
-  padding: 1em;
-  text-align: center;
-}
-#menu .item:hover {
-  background: #157fbe;
-}
-#menu .item:hover .submenu {
-  display: block;
-}
-*/
