@@ -22,7 +22,6 @@
           </div>
           <div class="inner">
             <p class="line-break-01" data-turbolinks="false"><%= link_to sale.s_title, sale%></p>
-            <p><%= render_with_hashtags(sale.s_hashtag) %></p>
               <span class="list_price"><%= number_to_currency(sale.s_was_price, locale: :kr) %>원</span>
               <span class="current_price"><%= number_to_currency(sale.s_is_price, locale: :kr) %>원</span>
           </div>

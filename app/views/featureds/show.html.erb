@@ -17,6 +17,7 @@
         <div class="btn clearfix">
           <a class="amz_btn" target="_blank" href="<%= @featured.f_link %>"><%= @featured.f_source %>에서 구매하기</a>
           <% if current_user && current_user.admin %>
+            <%= render_with_fhashtags(@featured.f_hashtag) %>
             <div class="admin">
               <%= link_to 'Back', featureds_path %> | 
               <%= link_to 'Edit', edit_featured_path(@featured) %> |

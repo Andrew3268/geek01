@@ -1,33 +1,41 @@
+<div class="topoftop"></div>
 
-<h1>Hashtag || <%= link_to 'New Featured', new_featured_path %></h1>
+<div class="index-wrap">
+  <div class="wrap">
 
-<div class="where-hashtag">
-<% if params[:name].present? %>
-  <p><span class="hashtag-through">#<%= params[:name] %></span></p>
-<% end %>
+    <div class="visual clearfix">
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>F title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @featureds.each do |featured| %>
-      <tr>
-        <td><%= featured.f_title %></td>
-        <td><%= render_with_fhashtags(featured.f_hashtag) %></td>
-        <td><%= link_to 'Show', featured %></td>
-        <td><%= link_to 'Edit', edit_featured_path(featured) %></td>
-        <td><%= link_to 'Destroy', featured, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="where-hashtag">
+    <% if params[:name].present? %>
+      <p><span class="hashtag-through">#<%= params[:name] %></span></p>
     <% end %>
-  </tbody>
-</table>
 
-<br>
+    <% if current_user && current_user.admin %>
+      <div class="index-amdin">
+        <%= link_to 'New Feautred', new_featured_path %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      </div>
+    <% end %>
+
+    <div class="product-border clearfix">
+      <% @featureds.each do |featured| %>
+        <div class="card">
+          <div class="image-box">
+            <%= link_to image_tag(featured.f_image), featured %>
+          </div>
+          <div class="inner">
+            <p class="line-break-01"><%= link_to featured.f_title, featured%></p>
+            
+              <span class="list_price"><%= number_to_currency(featured.f_was_price, locale: :kr) %>원</span>
+              <span class="current_price"><%= number_to_currency(featured.f_is_price, locale: :kr) %>원</span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    
+  </div><!--./wrap-->
+</div><!--./index-wrap->
+
 
 
