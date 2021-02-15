@@ -12,6 +12,7 @@
     <% if current_user && current_user.admin %>
       <div class="index-amdin" data-turbolinks="false">
         <%= link_to 'New Sale', new_sale_path %>
+        <a href="/featureds">Go to featured</a>
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
       </div>
     <% end %>

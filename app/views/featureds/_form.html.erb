@@ -1,0 +1,23 @@
+<div class="hotdeal_form">
+  <%= simple_form_for(@featured) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="basic_info">
+      <%= f.input :f_image %>
+      <%= f.input :f_title %>
+      <%= f.input :f_link %>
+      <%= f.input :f_source %>
+      <%= f.input :f_hashtag %>
+    </div>
+
+    <div class="pricing clearfix">
+      <%= f.input :f_is_price %>
+      <%= f.input :f_was_price %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>

@@ -20,4 +20,5 @@ class Sale < ApplicationRecord
         sale.tags << tag
     end
   end
+  
 end

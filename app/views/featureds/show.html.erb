@@ -1,0 +1,43 @@
+<div class="show-wrap">
+  <div class="wrap">
+
+    <div class="container clearfix">
+      <a href="/featureds"><img class="go_back" src="<%=asset_path 'go_back.png' %>" alt="Go bact to home" /></a>
+
+      <div class="image-box clearfix">
+        <img src="<%= @featured.f_image %>" alt="<%= @featured.f_title %>" title="<%= @featured.f_title %>" />
+      </div>
+
+      <div class="inner clearfix">
+        <p class="line-break-01"><%= @featured.f_title %></p>
+      
+
+      
+        <!-- Button Section -->
+        <div class="btn clearfix">
+          <a class="amz_btn" target="_blank" href="<%= @featured.f_link %>"><%= @featured.f_source %>에서 구매하기</a>
+          <% if current_user && current_user.admin %>
+            <div class="admin">
+              <%= link_to 'Back', featureds_path %> | 
+              <%= link_to 'Edit', edit_featured_path(@featured) %> |
+              <%= link_to 'Destroy', @featured, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="notice clearfix">
+          <span>- 상품 가격과 세일 정보는 포스팅 이후 변경 될 수 있습니다.</span>
+          <span>- 파트너스 활동을 통해 일정의 수수료를 받을 수 있습니다.</span>
+          <!-- <span></span> -->
+        </div>
+
+      </div><!--./inner-->
+    </div><!--./container-->
+
+  </div>
+</div>
+
+
+
+
+

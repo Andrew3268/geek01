@@ -1,4 +1,4 @@
-트<div class="show-wrap">
+<div class="show-wrap">
   <div class="wrap">
 
     <div class="container clearfix">
@@ -10,64 +10,68 @@
       <div class="title">
         <h2 class="line-break-02"><%= @sale.s_title %></h2>
       </div>
-      <h2 class="summary_title">SUMMARY</h2>
-      <div class="receipt">
-        <!-- Button Section - Text(left) -->
-        <div class="receipt__grid1">
-          <p>상품가격</p>
-          <% hotdeal_pct = 0 %>
-          <% hotdeal_pct =  (@sale.s_was_price.to_i - @sale.s_is_price.to_i) / @sale.s_was_price * 100 %>
-          <p><%= number_to_percentage(hotdeal_pct, precision: 0) %> 세일</p>
-          <% if @sale.s_source.present? %>
-          <% else %>
-            <p>로켓배송</p>
-          <% end %>
-          
-      
-          <hr>
 
-          <p class="total_text">Total</p>
-        </div>
-
-        <!-- Summary Section - Price(right) -->
-        <div class="receipt__grid2">
-          <p><em>-</em> <%= number_to_currency(@sale.s_was_price, locale: :kr) %>원</p>
-          <% discount_price = 0 %>
-          <% discount_price = @sale.s_was_price.to_f - @sale.s_is_price.to_f %>
-          <p>- <%= number_to_currency(discount_price, locale: :kr) %>원</p>
-          <% if @sale.s_source.present? %>
-          <% else %>
-            <% if @sale.s_rocket.present? %>
-              <p>YES</p>
+      <div class="inner">
+        <h2 class="summary_title">SUMMARY</h2>
+        <div class="receipt">
+          <!-- Button Section - Text(left) -->
+          <div class="receipt__grid1">
+            <p>상품가격</p>
+            <% hotdeal_pct = 0 %>
+            <% hotdeal_pct =  (@sale.s_was_price.to_i - @sale.s_is_price.to_i) / @sale.s_was_price * 100 %>
+            <p><%= number_to_percentage(hotdeal_pct, precision: 0) %> 세일</p>
+            <% if @sale.s_source.present? %>
             <% else %>
-              <p>NO</p>
+              <p>로켓배송</p>
             <% end %>
-          <% end %>
-          <hr>
-
-          <p class="total_price "><%= number_to_currency(@sale.s_is_price, locale: :kr) %>원</p>
-
           
-        </div>
-      </div>
+            <hr>
 
-      <!-- <div class="total-notice">
-        <p>쿠팡에서 <span><%= number_to_percentage(hotdeal_pct, precision: 0) %>off</span> 할인 중이며 
-        <span><%= number_to_currency(discount_price, locale: :kr) %>원</span> 싸게 살 수 있어요.</p>
-      </div> -->
-
-      <!-- Button Section -->
-      <div class="btn">
-        <a class="amz_btn" target="_blank" href="<%= @sale.s_link %>">쿠팡에서 <%= number_to_currency(discount_price, locale: :kr) %>원 저렴하게 구매하기</a>
-
-        <% if current_user && current_user.admin %>
-          <div class="admin">
-            <%= link_to 'Back', sales_path %> | 
-            <%= link_to 'Edit', edit_sale_path(@sale) %> |
-            <%= link_to 'Destroy', @sale, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <p class="total_text">Total</p>
           </div>
-        <% end %>
-      </div>
+
+          <!-- Summary Section - Price(right) -->
+          <div class="receipt__grid2">
+            <p><em>-</em> <%= number_to_currency(@sale.s_was_price, locale: :kr) %>원</p>
+            <% discount_price = 0 %>
+            <% discount_price = @sale.s_was_price.to_f - @sale.s_is_price.to_f %>
+            <p>- <%= number_to_currency(discount_price, locale: :kr) %>원</p>
+            <% if @sale.s_source.present? %>
+            <% else %>
+              <% if @sale.s_rocket.present? %>
+                <p>YES</p>
+              <% else %>
+                <p>NO</p>
+              <% end %>
+            <% end %>
+            <hr>
+
+            <p class="total_price "><%= number_to_currency(@sale.s_is_price, locale: :kr) %>원</p>
+
+            
+          </div>
+        </div>
+      
+
+        <!-- Button Section -->
+        <div class="btn clearfix">
+          <a class="amz_btn" target="_blank" href="<%= @sale.s_link %>">쿠팡에서 <%= number_to_currency(discount_price, locale: :kr) %>원 할인받기</a>
+          <% if current_user && current_user.admin %>
+            <div class="admin">
+              <%= link_to 'Back', sales_path %> | 
+              <%= link_to 'Edit', edit_sale_path(@sale) %> |
+              <%= link_to 'Destroy', @sale, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="notice clearfix">
+          <span>- 상품 가격과 세일 정보는 포스팅 이후 변경 될 수 있습니다.</span>
+          <span>- 파트너스 활동을 통해 일정의 수수료를 받을 수 있습니다.</span>
+          <!-- <span></span> -->
+        </div>
+
+      </div><!--./inner->
 
       
 

@@ -1,0 +1,34 @@
+<div class="topoftop"></div>
+
+<div class="index-wrap">
+  <div class="wrap">
+
+    <div class="visual clearfix">
+    </div>
+
+    <% if current_user && current_user.admin %>
+      <div class="index-amdin">
+        <%= link_to 'New Feautred', new_featured_path %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      </div>
+    <% end %>
+
+    <div class="product-border clearfix">
+      <% @featureds.each do |featured| %>
+        <div class="card">
+          <div class="image-box">
+            <%= link_to image_tag(featured.f_image), featured %>
+          </div>
+          <div class="inner">
+            <p class="line-break-01"><%= link_to featured.f_title, featured%></p>
+            
+              <span class="list_price"><%= number_to_currency(featured.f_was_price, locale: :kr) %>원</span>
+              <span class="current_price"><%= number_to_currency(featured.f_is_price, locale: :kr) %>원</span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    
+  </div><!--./wrap-->
+</div><!--./index-wrap->
+
