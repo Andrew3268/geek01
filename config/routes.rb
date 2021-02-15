@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  # root 'posts#index'
+  root 'sales#index'
+
   resources :sales
   devise_for :users
-  root 'posts#index'
   resources :posts
 
   get '/sales/hashtag/:name', to:'sales#hashtags'
