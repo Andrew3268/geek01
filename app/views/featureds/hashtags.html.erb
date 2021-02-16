@@ -6,11 +6,6 @@
     <div class="visual clearfix">
     </div>
 
-    <div class="where-hashtag">
-    <% if params[:name].present? %>
-      <p><span class="hashtag-through">#<%= params[:name] %></span></p>
-    <% end %>
-
     <% if current_user && current_user.admin %>
       <div class="index-amdin">
         <%= link_to 'New Feautred', new_featured_path %>
@@ -33,9 +28,18 @@
         </div>
       <% end %>
     </div>
+    <%= raw pagy_nav(@pagy) %>
+
+    <div class="back_btn_mobile">
+      <a href="/picks"><img class="back_btn_m" src="<%=asset_path 'back_btn.png' %>" alt="Go bact to home" /></a>
+    </div>
     
   </div><!--./wrap-->
 </div><!--./index-wrap->
+
+
+
+
 
 
 

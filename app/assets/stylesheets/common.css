@@ -37,6 +37,12 @@ body{margin:0;padding:0;font-size:15px;color:#3d3d3d;line-height:1.5;font-weight
   .wrap{width:auto;margin:0 5%;}
 }
 
+/* Pagination */
+.pagy-nav{margin:15px 2% 30px 2%;font-size:15px;}
+.pagy-nav .page{margin-right:7px;}
+.pagy-nav .active{background:#C7B3E5;padding:5px 10px;color:#fff;border-radius:20px;}
+
+/* line controll */
 .line-break-01{word-break:keep-all;line-height:1.4;height:1.5em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;}
 .line-break-02{word-break:keep-all;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
 
@@ -95,3 +101,11 @@ body{margin:0;padding:0;font-size:15px;color:#3d3d3d;line-height:1.5;font-weight
 .hotdeal_form .form_btn input{margin-top:10px;background:#000;color:#fff;padding:15px 0;}
 
 
+/* Btn for back */
+.back_btn_mobile{position:fixed;bottom:10px;left:10px;display:none;}
+.back_btn_mobile a{display:block;}
+.back_btn_mobile a img{width:50px;height:50px;opacity:0.2;}
+
+@media screen and (max-width:640px){
+  .back_btn_mobile{display:block;}
+}

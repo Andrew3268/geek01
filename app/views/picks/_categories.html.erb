@@ -1,0 +1,44 @@
+<div class="category-pc clearfix cat-common" data-turbolinks="false">
+  <nav class="navbar clearfix">
+    <ul>
+      <li><a href="/picks">Everything</a></li>
+      <li><a href="/picks/phashtag/가전디지털">가전디지털</a></li>
+      <li><a href="/picks/phashtag/생활용품">생활용품</a></li>
+      <li><a href="/picks/phashtag/주방용품">주방용품</a></li>
+      <li><a href="/picks/phashtag/홈리빙">홈리빙</a></li>
+      <li><a href="/picks/phashtag/패션">패션</a></li>
+      <li><a href="/picks/phashtag/뷰티">뷰티</a></li>
+      <li><a href="/picks/phashtag/스포츠_레져">스포츠/레저</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="category-mobile clearfix cat-common" data-turbolinks="false">
+  <nav class="navbar clearfix">
+    <ul class="left">
+      <li><a href="/picks">Everything</a></li>
+      <li><a href="/picks/phashtag/가전디지털">가전디지털</a></li>
+      <li><a href="/picks/phashtag/생활용품">생활용품</a></li>
+      <li><a href="/picks/phashtag/주방용품">주방용품</a></li>
+      <li><a href="/picks/phashtag/홈리빙">홈리빙</a></li>
+      <li><a href="/picks/phashtag/패션">패션</a></li>
+      <li><a href="/picks/phashtag/뷰티">뷰티</a></li>
+      <li><a href="/picks/phashtag/스포츠_레져">스포츠/레저</a></li>
+    </ul>
+    <ul class="right">
+      <li><a href="#n">+ 더보기</a></li>
+    </ul>
+  </nav>
+</div>
+
+<script type="text/javascript">
+  $(window).scroll(function () {
+    console.log($(window).scrollTop())
+    if ($(window).scrollTop() > 63) {
+      $('.navbar').addClass('navbar-fixed');
+    }
+    if ($(window).scrollTop() < 64) {
+      $('.navbar').removeClass('navbar-fixed');
+    }
+  });
+</script>

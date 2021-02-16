@@ -5,12 +5,17 @@ class PicksController < ApplicationController
   # GET /picks
   # GET /picks.json
   def index
-    @picks = Pick.all.order("created_at DESC")
+    @pagy, @picks = pagy(Pick.all.order("created_at DESC"), items: 80)
   end
 
   # GET /picks/1
   # GET /picks/1.json
   def show
+  end
+
+  def hashtags
+    tag = Tag.find_by(name: params[:name])
+    @pagy, @picks = pagy(tag.picks, items: 80)
   end
 
   # GET /picks/new
@@ -29,7 +34,7 @@ class PicksController < ApplicationController
     @pick.user = current_user
     respond_to do |format|
       if @pick.save
-        format.html { redirect_to @pick, notice: 'Pick was successfully created.' }
+        format.html { redirect_to "/picks", notice: 'Pick was successfully created.' }
         format.json { render :show, status: :created, location: @pick }
       else
         format.html { render :new }
@@ -43,7 +48,7 @@ class PicksController < ApplicationController
   def update
     respond_to do |format|
       if @pick.update(pick_params)
-        format.html { redirect_to @pick, notice: 'Pick was successfully updated.' }
+        format.html { redirect_to "/picks", notice: 'Pick was successfully updated.' }
         format.json { render :show, status: :ok, location: @pick }
       else
         format.html { render :edit }

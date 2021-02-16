@@ -4,7 +4,7 @@ class SalesController < ApplicationController
   # GET /sales
   # GET /sales.json
   def index
-    @sales = Sale.all.order("created_at DESC")
+    @pagy, @sales = pagy(Sale.all.order("created_at DESC"), items: 80)
   end
 
   # GET /sales/1
@@ -14,7 +14,7 @@ class SalesController < ApplicationController
 
   def hashtags
     tag = Tag.find_by(name: params[:name])
-    @sales = tag.sales.order("created_at DESC")
+    @pagy, @sales = pagy(tag.sales.order("created_at DESC"), items: 80)
   end
 
   # GET /sales/new

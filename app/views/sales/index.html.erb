@@ -1,4 +1,5 @@
 <div class="topoftop"></div>
+<%= render 'shared/header' %>
 <div class="index-wrap">
   <div class="wrap">
 
@@ -6,13 +7,13 @@
       <p>너무나 듣고 싶은 한마디</p>
       <h2>사랑해 보다 오늘 세일해</h2>
       <%= render 'sales/categories' %>
-      
     </div>
 
     <% if current_user && current_user.admin %>
       <div class="index-amdin" data-turbolinks="false">
         <%= link_to 'New Sale', new_sale_path %>
         <a href="/featureds">Go to featured</a>
+        <a href="/picks">Go to picks</a>
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
       </div>
     <% end %>
@@ -36,6 +37,7 @@
         </div>
       <% end %>
     </div>
+    <%= raw pagy_nav(@pagy) %>
     
   </div><!--./wrap-->
 </div><!--./index-wrap->

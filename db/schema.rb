@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_16_061615) do
+ActiveRecord::Schema.define(version: 2021_02_16_062327) do
 
   create_table "featureds", force: :cascade do |t|
     t.integer "user_id"
@@ -171,6 +171,15 @@ ActiveRecord::Schema.define(version: 2021_02_16_061615) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "picks_tags", id: false, force: :cascade do |t|
+    t.integer "pick_id"
+    t.integer "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pick_id"], name: "index_picks_tags_on_pick_id"
+    t.index ["tag_id"], name: "index_picks_tags_on_tag_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.string "title"
@@ -302,6 +311,8 @@ ActiveRecord::Schema.define(version: 2021_02_16_061615) do
 
   add_foreign_key "featureds_tags", "featureds"
   add_foreign_key "featureds_tags", "tags"
+  add_foreign_key "picks_tags", "picks"
+  add_foreign_key "picks_tags", "tags"
   add_foreign_key "sales", "users"
   add_foreign_key "sales_tags", "sales"
   add_foreign_key "sales_tags", "tags"

@@ -18,7 +18,7 @@
       <% @sales.each do |sale| %>
         <div class="card">
           <div class="image-box">
-            <a href="/sales/<%= sale.id %>" data-turbolinks="false"><img src="<%= sale.s_image %>" alt="<%= sale.s_title %>" title="<%= sale.s_title %>"></a>
+            <%= link_to image_tag(sale.s_image), sale %>
           </div>
           <div class="inner">
             <p class="line-break-01" data-turbolinks="false"><%= link_to sale.s_title, sale%></p>
@@ -31,6 +31,7 @@
         </div>
       <% end %>
     </div>
+    <%= raw pagy_nav(@pagy) %>
     
   </div><!--./wrap-->
 </div><!--./index-wrap->

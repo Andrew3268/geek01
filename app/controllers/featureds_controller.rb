@@ -5,7 +5,7 @@ class FeaturedsController < ApplicationController
   # GET /featureds
   # GET /featureds.json
   def index
-    @featureds = Featured.all.order("created_at DESC")
+    @pagy, @featureds = pagy(Featured.all.order("created_at DESC"), items: 80)
   end
 
   # GET /featureds/1
@@ -15,7 +15,7 @@ class FeaturedsController < ApplicationController
 
   def hashtags
     tag = Tag.find_by(name: params[:name])
-    @featureds = tag.featureds.order("created_at DESC")
+    @pagy, @featureds = pagy(tag.featureds.order("created_at DESC"), items: 80)
   end
 
   # GET /featureds/new

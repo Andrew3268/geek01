@@ -1,5 +1,4 @@
 <div class="topoftop"></div>
-<%= render 'shared/header' %>
 
 <div class="index-wrap">
   <div class="wrap">
@@ -9,6 +8,11 @@
       <h2>We picked for you!!</h2>
       <%= render 'picks/categories' %>
     </div>
+
+    <div class="where-hashtag">
+    <% if params[:name].present? %>
+      <p><span class="hashtag-through">#<%= params[:name] %></span></p>
+    <% end %>
 
     <% if current_user && current_user.admin %>
       <div class="index-amdin">
@@ -34,10 +38,10 @@
           </div>
         </a>
       <% end %>
-    
     </div>
-
     <%= raw pagy_nav(@pagy) %>
+
+
     
     
   </div><!--./wrap-->
