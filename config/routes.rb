@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :categories
-  resources :picks
   resources :featureds
   # root 'posts#index'
   root 'sales#index'
