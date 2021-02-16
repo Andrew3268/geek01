@@ -175,7 +175,7 @@ ActiveRecord::Schema.define(version: 2021_02_16_051202) do
     t.date "p_spare_73"
     t.date "p_spare_74"
     t.date "p_spare_75"
-    t.integer "category_id", null: false
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_picks_on_category_id"
