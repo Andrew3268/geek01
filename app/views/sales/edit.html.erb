@@ -1,6 +1,8 @@
-<div class="wrap">
-  <h1>Editing Sale</h1>
-  <%= render 'form', sale: @sale %>
-  <%= link_to 'Show', @sale %> |
-  <%= link_to 'Back', sales_path %>
-</div>
+<% if current_user && current_user.admin %>
+  <div class="wrap">
+    <h1>Editing Sale</h1>
+    <%= render 'form', sale: @sale %>
+    <%= link_to 'Show', @sale %> |
+    <%= link_to 'Back', sales_path %>
+  </div>
+<% end %>

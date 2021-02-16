@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :picks
   resources :featureds
   # root 'posts#index'
   root 'sales#index'

@@ -1,6 +1,8 @@
-<div class="wrap">
-  <h1>Editing Featured</h1>
-  <%= render 'form', featured: @featured %>
-  <%= link_to 'Show', @featured %> |
-  <%= link_to 'Back', featureds_path %>
-</div>
+<% if current_user && current_user.admin %>
+  <div class="wrap">
+    <h1>Editing Featured</h1>
+    <%= render 'form', featured: @featured %>
+    <%= link_to 'Show', @featured %> |
+    <%= link_to 'Back', featureds_path %>
+  </div>
+<% end %>
