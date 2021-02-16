@@ -10,9 +10,10 @@
     </div>
 
     <div class="where-hashtag">
-    <% if params[:name].present? %>
-      <p><span class="hashtag-through">#<%= params[:name] %></span></p>
-    <% end %>
+      <% if params[:name].present? %>
+        <p><span class="hashtag-through">#<%= params[:name] %></span></p>
+      <% end %>
+    </div>
 
     <% if current_user && current_user.admin %>
       <div class="index-amdin">

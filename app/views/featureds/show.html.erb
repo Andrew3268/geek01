@@ -2,22 +2,43 @@
   <div class="wrap">
 
     <div class="container clearfix">
-      <a href="/featureds"><img class="go_back" src="<%=asset_path 'go_back.png' %>" alt="Go bact to home" /></a>
+      <!-- <a href="/featureds"><img class="go_back" src="<%=asset_path 'go_back.png' %>" alt="Go bact to home" /></a> -->
+      <button onclick="goBack()"><img class="go_back" src="<%=asset_path 'go_back.png' %>" alt="back" /></button>
+      <script>
+        function goBack() {
+          window.history.back();
+        }
+      </script>
 
-      <div class="image-box clearfix">
+      <div class="image-box featured-img-box  clearfix">
         <img src="<%= @featured.f_image %>" alt="<%= @featured.f_title %>" title="<%= @featured.f_title %>" />
       </div>
 
       <div class="inner clearfix">
-        <p class="line-break-01"><%= @featured.f_title %></p>
-      
+        <p class="f_title line-break-01"><%= @featured.f_title %></p>
+        
+        <div class="detail_info clearfix">
+          <div class="info-box">
+            <p>평점</p>
+            <span>4.5 / 5.0</span>
+          </div>
+          <div class="info-box">
+            <p>리뷰</p>
+            <span>1000 +</span>
+          </div>
+        </div>
+        <div class="info-box-price">
+          <p>가격</p>
+          <span class="was"><%= number_to_currency(@featured.f_was_price, locale: :kr) %>원</span>
+          <span class="is"><%= number_to_currency(@featured.f_is_price, locale: :kr) %>원</span>
+        </div>
 
       
         <!-- Button Section -->
-        <div class="btn clearfix">
+        <div class="btn">
           <a class="amz_btn" target="_blank" href="<%= @featured.f_link %>"><%= @featured.f_source %>에서 구매하기</a>
           <% if current_user && current_user.admin %>
-            <%= render_with_fhashtags(@featured.f_hashtag) %>
+            <p class="hashtag"><%= render_with_fhashtags(@featured.f_hashtag) %></p>
             <div class="admin">
               <%= link_to 'Back', featureds_path %> | 
               <%= link_to 'Edit', edit_featured_path(@featured) %> |
@@ -26,7 +47,7 @@
           <% end %>
         </div>
 
-        <div class="notice clearfix">
+        <div class="notice">
           <span>- 상품 가격과 세일 정보는 포스팅 이후 변경 될 수 있습니다.</span>
           <span>- 파트너스 활동을 통해 일정의 수수료를 받을 수 있습니다.</span>
           <!-- <span></span> -->
