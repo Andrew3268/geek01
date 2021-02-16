@@ -1,0 +1,15 @@
+<div class="hotdeal_form">
+  <%= simple_form_for(@pick) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <%= f.association :category %>
+    <div class="basic_info">
+      <%= f.input :p_title, label: "Picks Title" %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>
