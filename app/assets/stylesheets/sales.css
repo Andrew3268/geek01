@@ -37,8 +37,8 @@
 .show-wrap .inner{float:left;width:50%;}
 .show-wrap .inner .btn p.hashtag{text-align:left;margin-top:10px;}
 .show-wrap .inner .detail_info{}
-.show-wrap .inner .detail_info .info-box{float:left;width:48%;margin:1%;padding:20px 10px;text-align:center;box-shadow:0 0 5px rgb(0,0,0,0.15);border-radius:15px;}
-.show-wrap .inner .info-box-price{padding:20px 10px;width:98%;margin:0 auto;text-align:center;box-shadow:0 0 5px rgb(0,0,0,0.15);border-radius:15px;margin-top:7px;}
+.show-wrap .inner .detail_info .info-box{float:left;width:48%;margin:1%;padding:20px 10px;text-align:center;box-shadow:0 0 5px rgba(0,0,0,0.15);border-radius:15px;}
+.show-wrap .inner .info-box-price{padding:20px 10px;width:98%;margin:0 auto;text-align:center;box-shadow:0 0 5px rgba(0,0,0,0.15);border-radius:15px;margin-top:7px;}
 .show-wrap .inner .info-box-price .is{font-size:20px;}
 .show-wrap .inner .info-box-price .was{color:#ccc;text-decoration:line-through;margin-right:3px;}
 .show-wrap .summary_title{margin-top:2em;}
