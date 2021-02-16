@@ -5,6 +5,7 @@ class SalesController < ApplicationController
   # GET /sales.json
   def index
     @pagy, @sales = pagy(Sale.all.order("created_at DESC"), items: 80)
+    @scategories = Scategory.all
   end
 
   # GET /sales/1

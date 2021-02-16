@@ -1,0 +1,76 @@
+<div class="category-pc clearfix cat-common" data-turbolinks="false">
+  <nav class="navbar clearfix">
+    <ul>
+      <li><a href="/sales">Everything</a></li>
+      <% @scategories.each do |scat| %>
+        <% if scat.scategory_01.present? %>
+          <li><a href="/sales/hashtag/<%= scat.scategory_01 %>"><%= scat.scategory_01 %></a></li>
+        <% end %>
+        <% if scat.scategory_02.present? %>
+          <li><a href="/sales/hashtag/<%= scat.scategory_02 %>"><%= scat.scategory_02 %></a></li>
+        <% end %>
+        <% if scat.scategory_03.present? %>
+          <li><a href="/sales/hashtag/<%= scat.scategory_03 %>"><%= scat.scategory_03 %></a></li>
+        <% end %>
+        <% if scat.scategory_04.present? %>
+          <li><a href="/sales/hashtag/<%= scat.scategory_04 %>"><%= scat.scategory_04 %></a></li>
+        <% end %>
+        <% if scat.scategory_05.present? %>
+          <li><a href="/sales/hashtag/<%= scat.scategory_05 %>"><%= scat.scategory_05 %></a></li>
+        <% end %>
+        <% if scat.scategory_06.present? %>
+          <li><a href="/sales/hashtag/<%= scat.scategory_06 %>"><%= scat.scategory_06 %></a></li>
+        <% end %>
+        <% if scat.scategory_07.present? %>
+          <li><a href="/sales/hashtag/<%= scat.scategory_07 %>"><%= scat.scategory_07 %></a></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </nav>
+</div>
+
+<div class="category-mobile clearfix cat-common" data-turbolinks="false">
+  <nav class="navbar clearfix">
+    <ul class="left">
+      <li><a href="/sales">Everything</a></li>
+      <% @scategories.each do |scat| %>
+        <% if scat.scategory_01.present? %>
+          <li><a href="/sales/hashtag/<%= scat.scategory_01 %>"><%= scat.scategory_01 %></a></li>
+        <% end %>
+        <% if scat.scategory_02.present? %>
+          <li><a href="/sales/hashtag/<%= scat.scategory_02 %>"><%= scat.scategory_02 %></a></li>
+        <% end %>
+        <% if scat.scategory_03.present? %>
+          <li><a href="/sales/hashtag/<%= scat.scategory_03 %>"><%= scat.scategory_03 %></a></li>
+        <% end %>
+        <% if scat.scategory_04.present? %>
+          <li><a href="/sales/hashtag/<%= scat.scategory_04 %>"><%= scat.scategory_04 %></a></li>
+        <% end %>
+        <% if scat.scategory_05.present? %>
+          <li><a href="/sales/hashtag/<%= scat.scategory_05 %>"><%= scat.scategory_05 %></a></li>
+        <% end %>
+        <% if scat.scategory_06.present? %>
+          <li><a href="/sales/hashtag/<%= scat.scategory_06 %>"><%= scat.scategory_06 %></a></li>
+        <% end %>
+        <% if scat.scategory_07.present? %>
+          <li><a href="/sales/hashtag/<%= scat.scategory_07 %>"><%= scat.scategory_07 %></a></li>
+        <% end %>
+      <% end %>
+    </ul>
+    <ul class="right">
+      <li><a href="/scategories">+ 더보기</a></li>
+    </ul>
+  </nav>
+</div>
+
+<script type="text/javascript">
+  $(window).scroll(function () {
+    console.log($(window).scrollTop())
+    if ($(window).scrollTop() > 63) {
+      $('.navbar').addClass('navbar-fixed');
+    }
+    if ($(window).scrollTop() < 64) {
+      $('.navbar').removeClass('navbar-fixed');
+    }
+  });
+</script>

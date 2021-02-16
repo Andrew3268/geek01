@@ -1,0 +1,7 @@
+<% if current_user && current_user.admin %>
+  <div class="wrap">
+    <h1>New Scategory</h1>
+    <%= render 'form', scategory: @scategory %>
+    <%= link_to 'Back', scategories_path %>
+  </div>
+<% end %>

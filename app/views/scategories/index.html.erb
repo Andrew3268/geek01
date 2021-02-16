@@ -1,0 +1,138 @@
+<div class="top-box"></div>
+<%= render 'shared/header' %>
+<div class="cat-wrap clearfix">
+    
+    <% @scategories.each do |scategory| %>
+      <div class="cat-box clearfix" data-turbolinks="false">
+        <h1>+ More</h1>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for category..." title="Type in a name">
+        <ul id="myUL" >
+          <% if scategory.scategory_01.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_01 %>"><%= scategory.scategory_01 %></a></li>
+          <% end %>
+          <% if scategory.scategory_02.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_02 %>"><%= scategory.scategory_02 %></a></li>
+          <% end %>
+          <% if scategory.scategory_03.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_03 %>"><%= scategory.scategory_03 %></a></li>
+          <% end %>
+          <% if scategory.scategory_04.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_04 %>"><%= scategory.scategory_04 %></a></li>
+          <% end %>
+          <% if scategory.scategory_05.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_05 %>"><%= scategory.scategory_05 %></a></li>
+          <% end %>
+          <% if scategory.scategory_06.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_06 %>"><%= scategory.scategory_06 %></a></li>
+          <% end %>
+          <% if scategory.scategory_07.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_07 %>"><%= scategory.scategory_07 %></a></li>
+          <% end %>
+          <% if scategory.scategory_08.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_08 %>"><%= scategory.scategory_08 %></a></li>
+          <% end %>
+          <% if scategory.scategory_09.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_09 %>"><%= scategory.scategory_09 %></a></li>
+          <% end %>
+          <% if scategory.scategory_10.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_10 %>"><%= scategory.scategory_10 %></a></li>
+          <% end %>
+          <% if scategory.scategory_11.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_11 %>"><%= scategory.scategory_11 %></a></li>
+          <% end %>
+          <% if scategory.scategory_12.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_12 %>"><%= scategory.scategory_12 %></a></li>
+          <% end %>
+          <% if scategory.scategory_13.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_13 %>"><%= scategory.scategory_13 %></a></li>
+          <% end %>
+          <% if scategory.scategory_14.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_14 %>"><%= scategory.scategory_14 %></a></li>
+          <% end %>
+          <% if scategory.scategory_15.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_15 %>"><%= scategory.scategory_15 %></a></li>
+          <% end %>
+          <% if scategory.scategory_16.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_16 %>"><%= scategory.scategory_16 %></a></li>
+          <% end %>
+          <% if scategory.scategory_17.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_17 %>"><%= scategory.scategory_17 %></a></li>
+          <% end %>
+          <% if scategory.scategory_18.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_18 %>"><%= scategory.scategory_18 %></a></li>
+          <% end %>
+          <% if scategory.scategory_19.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_19 %>"><%= scategory.scategory_19 %></a></li>
+          <% end %>
+          <% if scategory.scategory_20.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_20 %>"><%= scategory.scategory_20 %></a></li>
+          <% end %>
+          <% if scategory.scategory_21.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_21 %>"><%= scategory.scategory_21 %></a></li>
+          <% end %>
+          <% if scategory.scategory_22.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_22 %>"><%= scategory.scategory_22 %></a></li>
+          <% end %>
+          <% if scategory.scategory_23.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_23 %>"><%= scategory.scategory_23 %></a></li>
+          <% end %>
+          <% if scategory.scategory_24.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_24 %>"><%= scategory.scategory_24 %></a></li>
+          <% end %>
+          <% if scategory.scategory_25.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_25 %>"><%= scategory.scategory_25 %></a></li>
+          <% end %>
+          <% if scategory.scategory_26.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_26 %>"><%= scategory.scategory_26 %></a></li>
+          <% end %>
+          <% if scategory.scategory_27.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_27 %>"><%= scategory.scategory_27 %></a></li>
+          <% end %>
+          <% if scategory.scategory_28.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_28 %>"><%= scategory.scategory_28 %></a></li>
+          <% end %>
+          <% if scategory.scategory_29.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_29 %>"><%= scategory.scategory_29 %></a></li>
+          <% end %>
+          <% if scategory.scategory_30.present? %>
+            <li><a href="/sales/hashtag/<%= scategory.scategory_30 %>"><%= scategory.scategory_30 %></a></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <% if current_user && current_user.admin %>
+        <div class="admin">
+          <%= link_to 'New Scategory', new_scategory_path %> |
+          <%= link_to 'Show', scategory %>
+          <%= link_to 'Edit', edit_scategory_path(scategory) %>
+          <%= link_to 'Destroy', scategory, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      <% end %>
+    <% end %>
+  
+</div>
+
+<div class="back_btn_mobile">
+  <a href="/"><img class="back_btn_m" src="<%=asset_path 'back_btn.png' %>" alt="Go bact to home" /></a>
+</div>
+
+
+
+<script type="text/javascript">
+  function myFunction() {
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+          } else {
+              li[i].style.display = "none";
+          }
+      }
+  }
+</script>

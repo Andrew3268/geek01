@@ -1,4 +1,4 @@
-<div class="topoftop"></div>
+<!-- <div class="topoftop"></div> -->
 <%= render 'shared/header' %>
 <div class="index-wrap">
   <div class="wrap">
@@ -6,7 +6,7 @@
     <div class="visual clearfix">
       <p>너무나 듣고 싶은 한마디</p>
       <h2>사랑해 보다 오늘 세일해</h2>
-      <%= render 'sales/categories' %>
+      <%= render 'scategories/list' %>
     </div>
 
     <% if current_user && current_user.admin %>
@@ -14,6 +14,7 @@
         <%= link_to 'New Sale', new_sale_path %>
         <a href="/featureds">Go to featured</a>
         <a href="/picks">Go to picks</a>
+        <a href="/scategories">Go to Scategory</a>
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
       </div>
     <% end %>
