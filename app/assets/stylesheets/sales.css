@@ -30,15 +30,15 @@
 
 
 /* Show Page*/
-.container{width:800px;margin:100px auto 0 auto;box-shadow:0 0 20px 0 rgba(0,0,0,.06);;border-radius:20px;padding:20px;} 
+.container{width:800px;margin:100px auto 0 auto;box-shadow:0 0 20px 0 rgba(0,0,0,.06);border-radius:20px;padding:20px;} 
 .show-wrap .container .go_back{display:none;}
 .show-wrap .image-box{float:left;width:45%;margin-right:5%;position:relative;height:350px;}
 .show-wrap .image-box img{width:70%;height:70%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;} 
 .show-wrap .inner{float:left;width:50%;}
 .show-wrap .inner .btn p.hashtag{text-align:left;margin-top:10px;}
 .show-wrap .inner .detail_info{}
-.show-wrap .inner .detail_info .info-box{float:left;width:48%;margin:1%;padding:20px 10px;text-align:center;box-shadow:0 0 20px 0 rgb(0 0 0 / 6%);}
-.show-wrap .inner .info-box-price{padding:20px 10px;width:98%;margin:0 auto;text-align:center;box-shadow:0 0 20px 0 rgb(0 0 0 / 6%);}
+.show-wrap .inner .detail_info .info-box{float:left;width:48%;margin:1%;padding:20px 10px;text-align:center;box-shadow:0 0 20px 0 rgba(0 0 0 / 6%);}
+.show-wrap .inner .info-box-price{padding:20px 10px;width:98%;margin:0 auto;text-align:center;box-shadow:0 0 20px 0 rgba(0 0 0 / 6%);}
 .show-wrap .inner .info-box-price .is{font-size:20px;}
 .show-wrap .inner .info-box-price .was{color:#ccc;text-decoration:line-through;margin-right:3px;}
 .show-wrap .summary_title{margin-top:2em;}
