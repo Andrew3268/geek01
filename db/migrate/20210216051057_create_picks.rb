@@ -64,7 +64,7 @@ class CreatePicks < ActiveRecord::Migration[6.1]
       t.date :p_spare_75
 
 
-      t.references :category, index: true, foreign_key: true
+      t.references :category, null: false, foreign_key: true
 
       t.timestamps
     end
