@@ -1,167 +1,63 @@
-<div class="index-wrapper">
+<%= render 'shared/header' %>
+<%= render 'posts/visual'%>
 
-  <section class="index-hero-tabs">
-    <h1>STICKY SLIDER NAV</h1>
-    <h3>Sliding content with sticky tab nav</h3>
-    <div class="index-hero-tabs-container">
-      <a class="index-hero-tab" href="#sales">Sale</a>
-      <a class="index-hero-tab" href="#gift">Gift</a>
-      <a class="index-hero-tab" href="#featured">Featured</a>
-      <!-- <a class="index-hero-tab" href="#tab-angular">Angular</a>
-      <a class="index-hero-tab" href="#tab-other">Other</a> -->
-      <span class="index-hero-tab-slider"></span>
-    </div>
-  </section>
 
+<div class="contents-box">
   <div class="wrap">
-    <!-- <div class="visual">
-      <% if current_user %>
-        <%= link_to 'Sing out', destroy_user_session_path, method: :delete %>
-       <% else %>
-        <%= link_to 'Sign up', new_user_registration_path %>
-        <%= link_to 'Sign in', new_user_session_path %> 
-      <% end %>
 
-      <% if current_user && current_user.admin %>
-        <p>I am Admin!! <h1>Posts | <%= link_to 'New Post', new_post_path %></h1></p>
-      <% end %>
-    </div> -->
 
-      <!-- Hero -->
-  
-
-  <!-- Main -->
-  <main class="index-main">
-    <section class="index-slide clearfix" id="sales">
-      <h1>사랑해 보다 세일해</h1>
-      <%= render 'posts/test_card' %>
-    </section>
-    <div class="more-btn clearfix">
-      <a href="/sales">View More</a>
+    <div class="ctn-card cb_01 clearfix">
+      <h2>사랑해 보다 세일해</h2>
+      <div class="product-border clearfix">
+        <% @sales.each do |sale| %>
+          <div class="card">
+            <div class="image-box">
+              <!-- <a href="/sales/<%= sale.id %>" data-turbolinks="false"><img src="<%= sale.s_image %>" alt="<%= sale.s_title %>" title="<%= sale.s_title %>"></a> -->
+              <%= link_to image_tag(sale.s_image, alt: sale.s_title, title: sale.s_title), sale %>
+            </div>
+            <div class="inner">
+              <p class="line-break-01" data-turbolinks="false"><%= link_to sale.s_title, sale%></p>
+              
+                <span class="list_price"><%= number_to_currency(sale.s_was_price, locale: :kr) %>원</span>
+                <span class="current_price"><%= number_to_currency(sale.s_is_price, locale: :kr) %>원</span>
+            </div>
+              <% hotdeal_pct = 0 %>
+              <% hotdeal_pct =  (sale.s_was_price - sale.s_is_price) / sale.s_was_price * 100 %>
+              <div class="pct"><p><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</p></div>
+          </div>
+        <% end %>
+      </div>
     </div>
 
-    <section class="index-slide clearfix" id="gift">
-      <h1>예쁜 선물이 필요할때</h1>
-      <%= render 'posts/test_card' %>
-    </section>
-    <div class="more-btn clearfix">
-      <a href="#n">View More</a>
+    <div class="ctn-card cb_02 clearfix">
+      <h2>Best 핫딜</h2>
     </div>
 
-    <section class="index-slide clearfix" id="featured">
-      <h1>Featured</h1>
-      <%= render 'posts/test_card' %>
-    </section>
-    <div class="more-btn clearfix">
-      <a href="#n">View More</a>
+    <div class="ctn-card cb_03 clearfix">
+      <h2>Editor's Picks</h2>
+      <div class="pick-box clearfix">
+        <% @picks.each do |pick| %>
+          <a href="/featureds/fhashtag/<%= pick.p_link %>">
+            <div class="card">
+              <img src="<%= pick.p_image%>" alt="<%= pick.p_title %>" text="<%= pick.p_title %>">
+              <div class="inner">
+                <h2><%= pick.p_title %></h2>
+                <p><%= pick.p_description %></p>
+                <% if current_user && current_user.admin %>
+                  <%= render_with_phashtags(pick.p_hashtag) %>
+                  <%= link_to 'Edit', edit_pick_path(pick) %>
+                  <%= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+              </div>
+            </div>
+          </a>
+        <% end %>
+      </div>
     </div>
 
-    <!-- <section class="index-slide clearfix" id="tab-angular">
-      <h1>Angular</h1>
-      <h3>something about angular</h3>
-    </section>
-    <div class="more-btn clearfix">
-      <a href="#n">View More</a>
+    <div class="ctn-card cb_04 clearfix">
+      <h2>Best Picks</h2>
+    
     </div>
-
-    <section class="index-slide clearfix" id="tab-other">
-      <h1>Other</h1>
-      <h3>something about other</h3>
-    </section>
-    <div class="more-btn clearfix">
-      <a href="#n">View More</a>
-    </div> -->
-  </main>
-
-
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-     
   </div>
 </div>
-
-<script type="text/javascript">
-    class StickyNavigation {
-  
-    constructor() {
-      this.currentId = null;
-      this.currentTab = null;
-      this.tabContainerHeight = 70;
-      let self = this;
-      $('.index-hero-tab').click(function() { 
-        self.onTabClick(event, $(this)); 
-      });
-      $(window).scroll(() => { this.onScroll(); });
-      $(window).resize(() => { this.onResize(); });
-    }
-    
-    onTabClick(event, element) {
-      event.preventDefault();
-      let scrollTop = $(element.attr('href')).offset().top - this.tabContainerHeight + 1;
-      $('html, body').animate({ scrollTop: scrollTop }, 600);
-    }
-    
-    onScroll() {
-      this.checkTabContainerPosition();
-      this.findCurrentTabSelector();
-    }
-    
-    onResize() {
-      if(this.currentId) {
-        this.setSliderCss();
-      }
-    }
-    
-    checkTabContainerPosition() {
-      let offset = $('.index-hero-tabs').offset().top + $('.index-hero-tabs').height() - this.tabContainerHeight;
-      if($(window).scrollTop() > offset) {
-        $('.index-hero-tabs-container').addClass('index-hero-tabs-container--top');
-      } 
-      else {
-        $('.index-hero-tabs-container').removeClass('index-hero-tabs-container--top');
-      }
-    }
-    
-    findCurrentTabSelector(element) {
-      let newCurrentId;
-      let newCurrentTab;
-      let self = this;
-      $('.index-hero-tab').each(function() {
-        let id = $(this).attr('href');
-        let offsetTop = $(id).offset().top - self.tabContainerHeight;
-        let offsetBottom = $(id).offset().top + $(id).height() - self.tabContainerHeight;
-        if($(window).scrollTop() > offsetTop && $(window).scrollTop() < offsetBottom) {
-          newCurrentId = id;
-          newCurrentTab = $(this);
-        }
-      });
-      if(this.currentId != newCurrentId || this.currentId === null) {
-        this.currentId = newCurrentId;
-        this.currentTab = newCurrentTab;
-        this.setSliderCss();
-      }
-    }
-    
-    setSliderCss() {
-      let width = 0;
-      let left = 0;
-      if(this.currentTab) {
-        width = this.currentTab.css('width');
-        left = this.currentTab.offset().left;
-      }
-      $('.index-hero-tab-slider').css('width', width);
-      $('.index-hero-tab-slider').css('left', left);
-    }
-    
-  }
-
-  new StickyNavigation();
-
-</script>

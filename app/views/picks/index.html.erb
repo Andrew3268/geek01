@@ -21,7 +21,7 @@
       <% @picks.each do |pick| %>
         <a href="/featureds/fhashtag/<%= pick.p_link %>">
           <div class="card">
-            <img src="<%= pick.p_image%>" alt="" text="">
+            <img src="<%= pick.p_image%>" alt="<%= pick.p_title %>" text="<%= pick.p_title %>">
             <div class="inner">
               <h2><%= pick.p_title %></h2>
               <p><%= pick.p_description %></p>
@@ -34,9 +34,7 @@
           </div>
         </a>
       <% end %>
-    
     </div>
-
     <%= raw pagy_nav(@pagy) %>
     
     

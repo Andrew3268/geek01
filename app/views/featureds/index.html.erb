@@ -17,7 +17,7 @@
       <% @featureds.each do |featured| %>
         <div class="card">
           <div class="image-box">
-            <%= link_to image_tag(featured.f_image), featured %>
+            <%= link_to image_tag(featured.f_image, alt: featured.f_title, title: featured.f_title), featured %>
           </div>
           <div class="inner">
             <p class="line-break-01"><%= link_to featured.f_title, featured%></p>
