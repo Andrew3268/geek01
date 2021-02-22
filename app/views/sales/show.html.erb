@@ -16,10 +16,10 @@
         <div class="receipt">
           <!-- Button Section - Text(left) -->
           <div class="receipt__grid1">
-            <p>상품가격</p>
+            <p>상품 가격</p>
             <% hotdeal_pct = 0 %>
             <% hotdeal_pct =  (@sale.s_was_price.to_i - @sale.s_is_price.to_i) / @sale.s_was_price * 100 %>
-            <p><%= number_to_percentage(hotdeal_pct, precision: 0) %> 세일</p>
+            <p class="pct"><%= number_to_percentage(hotdeal_pct, precision: 0) %>세일</p>
             <% if @sale.s_source.present? %>
             <% else %>
               <p>로켓배송</p>
