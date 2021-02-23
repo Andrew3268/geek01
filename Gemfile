@@ -9,7 +9,8 @@ gem 'pagy'
 gem 'friendly_id'
 gem 'jquery-rails'
 gem 'meta-tags'
-
+gem 'sitemap_generator'
+gem 'whenever', require: false
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
