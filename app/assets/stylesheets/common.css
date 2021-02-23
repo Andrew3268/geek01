@@ -5,7 +5,7 @@
 
 h1,h2,h3,h4,h5,h6,p,ul,li,address,form,fieldset,legend,input,button,dl,dt,dd,table,thead,tbody,tfoot,tr,th,td{margin:0;padding:0;font-family:inherit;}
 a img{border:0;}/* a태그로 감싼 이미지의 파란 테두리 삭제 (ie9-10) */
-a{text-decoration:none;color:#3d3d3d;}
+a{text-decoration:none;color:#000;}
 ul,li{list-style:none;}/* li앞에 동그라미 삭제 */
 em,address{font-style:normal;}
 fieldset{border:0;}/*테두리삭제*/
@@ -18,7 +18,7 @@ input, textarea, select{border:1px solid #ccc;-moz-appearance:none;appearance:no
 .clearfix:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
 .clearfix{display:block;}
 
-body{margin:0;padding:0;font-size:15px;color:#3d3d3d;line-height:1.5;font-weight:300;-webkit-scrollbar:none;font-family: "Montserrat", sans-serif;}
+body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:300;-webkit-scrollbar:none;font-family: "Montserrat", sans-serif;}
 @media screen and (max-width:640px){
   body{font-size:13px;font-weight:400;}
 }
@@ -43,6 +43,7 @@ header{height:60px;position:relative;}
 header .header-container{display:flex;justify-content:center;align-items:center;width:1200px;margin:0px auto;height:100%;transition:0.3s;}
 header .header-container .logo{position:relative;}
 header .header-container .logo span:nth-of-type(1){font-family:"Montserrat", sans-serif;font-size:25px;font-weight:600;}
+header .header-container .logo span a{display:inline;box-shadow:inset 0 -5px 0 rgba(0,0,0,1);}
 header .header-container .mobile_nav{margin:1px 10px 0;display:none;}
 header .header-container .mobile_nav .burger{width:19px;height:19px;position:relative;overflow:hidden;}
 header .header-container .mobile_nav .burger:active .top, header .header-container .mobile_nav .burger:focus .top, header .header-container .mobile_nav .burger:hover .top{width:60% !important;}
@@ -93,6 +94,8 @@ header .header-container .icons .block{display: inline-block;}
   header .logo span{font-size:20px !important;}
   header .header-container .icons{margin-top:10px;min-width:74px;}
   header .header-container .icons a img{height:35px;width:35px;}
+  header .header-container .mobile_nav{width:15%;}
+
   .mobile_menu{height:295px;}
   .mobile_menu:before{margin:-10px 5px;}
   .mobile_menu nav{padding:30px 50px;}
@@ -134,7 +137,7 @@ header .header-container .icons .block{display: inline-block;}
 
 .cat-common nav.fixed{position:fixed;top:0;left:0;padding:1em;z-index:9999;background:#fff;width:100%;border-bottom:1px solid #ccc;text-align:center;}
 .cat-common nav.fixed a{}
-.cat-common .navbar{padding:5px;}
+.cat-common .navbar{padding:10px 0;}
 .category-pc{display:-webkit-box;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction: normal;flex-flow: row wrap;-webkit-box-pack:center;/*justify-content:center;*/}
 .category-pc:before, .category-pc:after{content:"";background:#ccc;padding:0.5px;-webkit-box-flex:100%;flex:100%;visibility:visible}
 
@@ -144,7 +147,7 @@ header .header-container .icons .block{display: inline-block;}
   .visual ul{display:block;margin:0 auto;overflow-x:scroll;white-space:nowrap;overflow-y:hidden;}
   .visual ul li{float:none;display:inline-block;margin-right:10px;line-height:30px;text-transform:uppercase;}
   .visual ul li a{font-size:15px;}
-  .cat-common .navbar{padding:10px 0;}
+  .cat-common .navbar{padding:10px;}
   .visual .category-pc{display:none;}
   .visual .category-mobile{display:block;border-bottom:1px solid #ccc;}
   .visual .category-mobile ul.left{float:left;width:80%;}
@@ -194,7 +197,7 @@ header .header-container .icons .block{display: inline-block;}
 .where-hashtag span:after{content:"";width:0;height:10px;display:inline-block;background:rgba(241,236,249,0.5);}
 
 @media screen and (max-width:640px){
-  .where-hashtag{display:inline-block;margin-bottom:20px;}
+  .where-hashtag{display:inline-block;margin-bottom:10px;}
   .where-hashtag p{font-size:20px;}
 }
 

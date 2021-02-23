@@ -3,14 +3,12 @@
 
 <div class="index-wrap">
   <div class="wrap">
-
-    <div class="visual clearfix">
-    </div>
-
-    <div class="where-hashtag">
-      <% if params[:name].present? %>
-        <p><span class="hashtag-through">#<%= params[:name] %></span></p>
-      <% end %>
+    <div class="hashtag-visual">
+      <div class="where-hashtag">
+        <% if params[:name].present? %>
+          <p><span class="hashtag-through">#<%= params[:name] %></span></p>
+        <% end %>
+      </div>
     </div>
 
     <% if current_user && current_user.admin %>

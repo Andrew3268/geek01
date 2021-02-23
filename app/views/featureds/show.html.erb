@@ -20,16 +20,26 @@
         <div class="detail_info clearfix">
           <div class="info-box">
             <p>평점</p>
-            <span>4.5 / 5.0</span>
+            <% if @featured.f_spare_01.present? %>
+              <span><%= @featured.f_spare_01 %> / 5.0</span>
+            <% else %>
+              <span> - </span>
+            <% end %>
           </div>
           <div class="info-box">
             <p>리뷰</p>
-            <span>1000 +</span>
+            <% if @featured.f_spare_02.present? %>
+              <span><%= @featured.f_spare_02 %> +</span>
+            <% else %>
+              <span> - </span>
+            <% end %>
           </div>
         </div>
         <div class="info-box-price">
           <p>가격</p>
-          <span class="was"><%= number_to_currency(@featured.f_was_price, locale: :kr) %>원</span>
+          <% if @featured.f_was_price.present? %>
+            <span class="was"><%= number_to_currency(@featured.f_was_price, locale: :kr) %>원</span>
+          <% end %>
           <span class="is"><%= number_to_currency(@featured.f_is_price, locale: :kr) %>원</span>
         </div>
 

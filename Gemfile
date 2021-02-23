@@ -10,6 +10,8 @@ gem 'friendly_id'
 gem 'jquery-rails'
 gem 'meta-tags'
 
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'
 # Use sqlite3 as the database for Active Record

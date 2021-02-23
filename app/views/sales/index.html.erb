@@ -7,6 +7,10 @@
       <p>너무나 듣고 싶은 한마디</p>
       <h2>사랑해 보다 오늘 세일해</h2>
       <%= render 'scategories/list' %>
+      <div class="extra_hash">
+        <a href="/sales/hashtag/만원이하">#1만원이하</a>
+        <a href="/sales/hashtag/반값이상할인">#50%이상할인</a>
+      </div>
     </div>
 
     <% if current_user && current_user.admin %>
@@ -28,9 +32,8 @@
           </div>
           <div class="inner">
             <p class="line-break-01" data-turbolinks="false"><%= link_to sale.s_title, sale%></p>
-            
-              <span class="list_price"><%= number_to_currency(sale.s_was_price, locale: :kr) %>원</span>
-              <span class="current_price"><%= number_to_currency(sale.s_is_price, locale: :kr) %>원</span>
+            <span class="list_price"><%= number_to_currency(sale.s_was_price, locale: :kr) %>원</span>
+            <span class="current_price"><%= number_to_currency(sale.s_is_price, locale: :kr) %>원</span>
           </div>
             <% hotdeal_pct = 0 %>
             <% hotdeal_pct =  (sale.s_was_price - sale.s_is_price) / sale.s_was_price * 100 %>
