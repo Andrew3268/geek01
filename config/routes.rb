@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # root 'posts#index'
   root 'sales#index'
 
+
   resources :sales
   devise_for :users
   resources :posts

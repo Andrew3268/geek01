@@ -19,7 +19,7 @@
       <% @sales.each do |sale| %>
         <div class="card">
           <div class="image-box">
-            <%= link_to image_tag(sale.s_image), sale %>
+            <%= link_to image_tag(sale.s_image, alt: sale.s_title, title: sale.s_title), sale %>
           </div>
           <div class="inner">
             <p class="line-break-01" data-turbolinks="false"><%= link_to sale.s_title, sale%></p>
