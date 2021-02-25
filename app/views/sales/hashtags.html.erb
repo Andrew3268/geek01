@@ -3,16 +3,17 @@
 <div class="index-wrap">
   <div class="wrap">
 
-    <div class="visual clearfix">
+    <!-- <div class="visual clearfix">
       <p>너무나 듣고 싶은 한마디</p>
       <h2>사랑해 보다 오늘 세일해</h2>
       <%= render 'sales/categories' %>
-    </div>
-
-    <div class="where-hashtag">
-      <% if params[:name].present? %>
-        <p><span class="hashtag-through">#<%= params[:name] %></span></p>
-      <% end %>
+    </div> -->
+    <div class="hashtag-visual">
+      <div class="where-hashtag">
+        <% if params[:name].present? %>
+          <p><span class="hashtag-through">#<%= params[:name] %></span></p>
+        <% end %>
+      </div>
     </div>
 
     <div class="product-border clearfix">
@@ -33,6 +34,10 @@
       <% end %>
     </div>
     <%= raw pagy_nav(@pagy) %>
+
+    <div class="back_btn_mobile">
+      <a href="/sales"><img class="back_btn_m" src="<%=asset_path 'back_btn.png' %>" alt="Go bact to home" /></a>
+    </div>
     
   </div><!--./wrap-->
 </div><!--./index-wrap->

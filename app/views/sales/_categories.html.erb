@@ -9,14 +9,14 @@
       <li><a href="/sales/hashtag/beauty">Beauty</a></li>
       <li><a href="/sales/hashtag/outdoor">Outdoor</a></li>
       <li><a href="/sales/hashtag/pet">Pet</a></li>
-      <li><a href="#n">Featureds</a></li>
+      <li><a href="/themes">Themes</a></li>
       <li><a href="/scategories">+ More</a></li>
     </ul>
   </nav>
 </div>
 
 <div class="category-mobile clearfix cat-common" data-turbolinks="false">
-  <nav class="navbar clearfix">
+  <nav class="navbar-mobile clearfix">
     <ul class="left">
       <li><a href="/sales">Everything</a></li>
       <li><a href="/sales/hashtag/tech">Tech</a></li>
@@ -26,7 +26,7 @@
       <li><a href="/sales/hashtag/beauty">Beauty</a></li>
       <li><a href="/sales/hashtag/outdoor">Outdoor</a></li>
       <li><a href="/sales/hashtag/pet">Pet</a></li>
-      <li><a href="#n">Featureds</a></li>
+      <li><a href="/themes">Themes</a></li>
     </ul>
     <ul class="right">
       <li><a href="/scategories">+ More</a></li>
@@ -38,10 +38,10 @@
   $(window).scroll(function () {
     console.log($(window).scrollTop())
     if ($(window).scrollTop() > 63) {
-      $('.navbar').addClass('navbar-fixed');
+      $('.navbar-mobile').addClass('navbar-fixed');
     }
     if ($(window).scrollTop() < 64) {
-      $('.navbar').removeClass('navbar-fixed');
+      $('.navbar-mobile').removeClass('navbar-fixed');
     }
   });
 </script>

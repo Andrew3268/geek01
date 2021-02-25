@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :picks
   has_many :sales
   has_many :scategories
+  has_many :themes
 end

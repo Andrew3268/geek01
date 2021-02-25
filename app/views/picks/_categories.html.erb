@@ -7,19 +7,21 @@
       <li><a href="/picks/phashtag/kitchen">ktichen</a></li>
       <li><a href="/picks/phashtag/fashion">fashion</a></li>
       <!-- <li><a href="/picks/phashtag/뷰티">뷰티</a></li> -->
+      <li><a href="/picks/phashtag/pet">pet</a></li>
       <li><a href="/picks/phashtag/outdoor">outdoor</a></li>
     </ul>
   </nav>
 </div>
 
 <div class="category-mobile clearfix cat-common" data-turbolinks="false">
-  <nav class="navbar clearfix">
+  <nav class="navbar-mobile clearfix">
     <ul class="left picks-left">
       <li><a href="/picks">Everything</a></li>
       <li><a href="/picks/phashtag/tech">tech</a></li>
       <li><a href="/picks/phashtag/homeware">homeware</a></li>
       <li><a href="/picks/phashtag/kitchen">ktichen</a></li>
       <li><a href="/picks/phashtag/fashion">fashion</a></li>
+      <li><a href="/picks/phashtag/pet">pet</a></li>
       <!-- <li><a href="/picks/phashtag/뷰티">뷰티</a></li> -->
       <li><a href="/picks/phashtag/outdoor">outdoor</a></li>
     </ul>
@@ -33,10 +35,10 @@
   $(window).scroll(function () {
     console.log($(window).scrollTop())
     if ($(window).scrollTop() > 63) {
-      $('.navbar').addClass('navbar-fixed');
+      $('.navbar-mobile').addClass('navbar-fixed');
     }
     if ($(window).scrollTop() < 64) {
-      $('.navbar').removeClass('navbar-fixed');
+      $('.navbar-mobile').removeClass('navbar-fixed');
     }
   });
 </script>

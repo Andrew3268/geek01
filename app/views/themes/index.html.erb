@@ -1,0 +1,39 @@
+<%= render 'shared/header' %>
+
+<div class="index-wrap">
+  <div class="wrap">
+
+    <div class="visual visual-theme clearfix">
+      <p>주제별로 찾는 핫딜 가이드</p>
+      <h2>HotDeals Guide</h2>
+    </div>
+
+    <% if current_user && current_user.admin %>
+      <div class="index-amdin">
+        <%= link_to 'New Theme', new_theme_path %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      </div>
+    <% end %>
+
+    <div class="pick-box clearfix">
+      <% @themes.each do |theme| %>
+        <a href="/sales/hashtag/<%= theme.t_link %>">
+          <div class="card">
+            <img src="<%= theme.t_image %>" alt="<%= theme.t_title %>" text="<%= theme.t_title %>">
+            <div class="inner">
+              <h2><%= theme.t_title %></h2>
+              <p><%= theme.t_description %></p>
+              <h4>by <%= theme.t_source %></h4>
+              <% if current_user && current_user.admin %>
+                <%= link_to 'Edit', edit_theme_path(theme) %>
+                <%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            </div>
+          </div>
+        </a>
+      <% end %>
+    </div>
+    <%= raw pagy_nav(@pagy) %>
+
+  </div>
+</div>

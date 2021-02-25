@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :themes
   resources :sitemap, :only => :index
   get 'sitemap.xml', :controller => "sitemap", :action => "xml"
 

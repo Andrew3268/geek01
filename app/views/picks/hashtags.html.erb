@@ -9,10 +9,12 @@
       <%= render 'picks/categories' %>
     </div>
 
-    <div class="where-hashtag">
-      <% if params[:name].present? %>
-        <p><span class="hashtag-through">#<%= params[:name] %></span></p>
-      <% end %>
+    <div class="hashtag-visual">
+      <div class="where-hashtag">
+        <% if params[:name].present? %>
+          <p><span class="hashtag-through">#<%= params[:name] %></span></p>
+        <% end %>
+      </div>
     </div>
 
     <% if current_user && current_user.admin %>
@@ -42,8 +44,9 @@
     </div>
     <%= raw pagy_nav(@pagy) %>
 
-
-    
+    <div class="back_btn_mobile">
+      <a href="/picks"><img class="back_btn_m" src="<%=asset_path 'back_btn.png' %>" alt="Go bact to home" /></a>
+    </div>
     
   </div><!--./wrap-->
 </div><!--./index-wrap->
