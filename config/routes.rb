@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'bridge/index'
   resources :themes
   resources :sitemap, :only => :index
   get 'sitemap.xml', :controller => "sitemap", :action => "xml"
@@ -18,6 +19,8 @@ Rails.application.routes.draw do
   get '/sales/hashtag/:name', to:'sales#hashtags'
   get '/featureds/fhashtag/:name', to:'featureds#hashtags'
   get '/picks/phashtag/:name', to:'picks#hashtags'
+
+  get '/bridge/hashtags'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

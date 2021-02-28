@@ -1,0 +1,27 @@
+<div class="wrap">
+
+  <div class="manage_hashtag">
+    <h2>해시태그 관리 페이지 | <a href="/">홈으로</a></h2>
+    <div class="manage_box fetured-hashtag">
+      <h3>Sales Hashtag(Theme 페이지 주제)</h3>
+      <% @sales.each do |sale| %>
+        <p><%= link_to sale.s_hashtag, sale %></p>
+      <% end %>
+    </div>
+
+    <div class="manage_box pick-hashtag">
+      <h3>Picks Hashtag</h3>
+      <% @picks.each do |pick| %>
+        <p><%= link_to pick.p_hashtag, pick %></p>
+      <% end %>
+    </div>
+
+    <div class="manage_box fetured-hashtag">
+      <h3>Featured Hashtag(블로그&카드뉴스 주제)</h3>
+      <% @featureds.each do |featured| %>
+        <p><%= link_to featured.f_hashtag, featured %></p>
+      <% end %>
+    </div>
+
+  </div>
+</div>

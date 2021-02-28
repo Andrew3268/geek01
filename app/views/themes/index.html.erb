@@ -1,9 +1,9 @@
 <%= render 'shared/header' %>
 
-<div class="index-wrap">
+<div class="index-wrap blog-wrap">
   <div class="wrap">
 
-    <div class="visual visual-theme clearfix">
+    <div class="visual clearfix">
       <p>주제별로 찾는 핫딜 가이드</p>
       <h2>HotDeals Guide</h2>
     </div>
@@ -15,7 +15,7 @@
       </div>
     <% end %>
 
-    <div class="pick-box clearfix">
+   <!--  <div class="theme-box clearfix">
       <% @themes.each do |theme| %>
         <a href="/sales/hashtag/<%= theme.t_link %>">
           <div class="card">
@@ -32,6 +32,33 @@
           </div>
         </a>
       <% end %>
+    </div> -->
+
+    <div class="blog-container clearfix">
+      <% @themes.each do |theme| %>
+        <div class="card">
+          <div class="card-header">
+              <a class="to_tag" href="/sales/hashtag/<%= theme.t_link %>"><img src="<%= theme.t_image %>" alt="<%= theme.t_title %>" text="<%= theme.t_title %>"></a>
+          </div>
+          <div class="card-body">
+            <% if current_user && current_user.admin %>
+              <span>
+                  <%= link_to 'Edit', edit_theme_path(theme) %>
+                  <%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %>            
+              </span>
+            <% end %>
+            <a class="to_tag" href="/sales/hashtag/<%= theme.t_link %>"><h4><%= theme.t_title %></h4></a>
+            <!-- <p><%= theme.t_description %></p> -->
+            <div class="card-user">
+                <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="User of Post">
+                <div class="user-info">
+                    <h5 >Editor</h5>
+                    <small >Avenue71</small>
+                </div>
+            </div>
+          </div>
+        </div>
+      <% end %>   
     </div>
     <%= raw pagy_nav(@pagy) %>
 

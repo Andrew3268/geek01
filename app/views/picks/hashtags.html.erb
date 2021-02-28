@@ -6,7 +6,7 @@
     <div class="visual clearfix">
       <p>지극히 주관적으로 골라봤어.</p>
       <h2>We picked for you!!</h2>
-      <%= render 'picks/categories' %>
+      <!-- < render 'picks/categories' > -->
     </div>
 
     <div class="hashtag-visual">
@@ -24,23 +24,34 @@
       </div>
     <% end %>
 
-    <div class="pick-box clearfix">
+    <div class="blog-container clearfix">
       <% @picks.each do |pick| %>
-        <a href="/featureds/fhashtag/<%= pick.p_link %>">
-          <div class="card">
-            <img src="<%= pick.p_image%>" alt="" text="">
-            <div class="inner">
-              <h2><%= pick.p_title %></h2>
-              <p><%= pick.p_description %></p>
-              <% if current_user && current_user.admin %>
-                <%= render_with_phashtags(pick.p_hashtag) %>
-                <%= link_to 'Edit', edit_pick_path(pick) %>
-                <%= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' } %>
-              <% end %>
+        <div class="card">
+          <div class="card-header">
+              <a class="to_tag" href="/featureds/fhashtag/<%= pick.p_link %>"><img src="<%= pick.p_image %>"></a>
+          </div>
+          <div class="card-body">
+            <span class="tag tag-teal">
+              <%= render_with_phashtags(pick.p_hashtag) %>
+            </span>
+            <% if current_user && current_user.admin %>
+              <span>
+                  <%= link_to 'Edit', edit_pick_path(pick) %>
+                  <%= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' } %>            
+              </span>
+            <% end %>
+            <a class="to_tag" href="/featureds/fhashtag/<%= pick.p_link %>"><h4><%= pick.p_title %></h4></a>
+            <!-- <p><%= pick.p_description %></p> -->
+            <div class="card-user">
+                <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="User of Post">
+                <div class="user-info">
+                    <h5 >Editor</h5>
+                    <small >Avenue71</small>
+                </div>
             </div>
           </div>
-        </a>
-      <% end %>
+        </div>
+      <% end %>   
     </div>
     <%= raw pagy_nav(@pagy) %>
 

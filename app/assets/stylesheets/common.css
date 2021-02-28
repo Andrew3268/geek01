@@ -41,7 +41,7 @@ body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:30
 /* Header */
 header{height:60px;position:relative;}
 header .header-container{display:flex;justify-content:center;align-items:center;width:1200px;margin:0px auto;height:100%;transition:0.3s;}
-header .header-container .logo{position:relative;}
+header .header-container .logo{position:relative;text-align:left;}
 header .header-container .logo span:nth-of-type(1){font-family:"Montserrat", sans-serif;font-size:25px;font-weight:600;}
 header .header-container .logo span a{display:inline;box-shadow:inset 0 -2px 0 rgba(0,0,0,1);}
 header .header-container .mobile_nav{margin:1px 10px 0;display:none;}
@@ -78,7 +78,7 @@ header .header-container .icons .block{display: inline-block;}
 }
 @media only screen and (max-width: 800px) {
   .mobile_menu{display:none;}
-  header{padding:0 50px;height:60px;}
+  header{padding:0 20px;height:60px;}
   header .header-container{width:100%;}
   header .header-container .icons a{width:25px;height:25px;}
   header .head_nav{display:none;}
