@@ -10,8 +10,8 @@
 
     <% if current_user && current_user.admin %>
       <div class="index-amdin">
-        <%= link_to 'New Pick', new_pick_path %>
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+        <%= link_to 'New Pick', new_pick_path %> |
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> |
       </div>
     <% end %>
     
@@ -34,7 +34,7 @@
             <a class="to_tag" href="/featureds/fhashtag/<%= pick.p_link %>"><h4><%= pick.p_title %></h4></a>
             <!-- <p><%= pick.p_description %></p> -->
             <div class="card-user">
-                <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="User of Post">
+                <img src="<%=asset_path 'ave71.png' %>" alt="Avenue71">
                 <div class="user-info">
                     <h5 >Editor</h5>
                     <small >Avenue71</small>
