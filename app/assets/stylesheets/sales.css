@@ -15,7 +15,7 @@
 .product-border .card .pct{position:absolute;bottom:70px;left:10px;color:#000;border-radius:10px;background:rgba(241,236,249,0.6);}
 .product-border .card .pct p{width:70px;height:20px;display:table-cell;vertical-align:middle;text-align:center;padding:5px;}
 .product-border .card .image-box{height:220px;position:relative;}
-.product-border .card .image-box img{width:80%;height:80%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;} 
+.product-border .card .image-box img{width:90%;height:90%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;} 
 .product-border .inner{padding:10px 15px;margin-top:25px;}
 .product-border .inner p{font-size:13px;margin:5px 0;}
 .product-border .inner span.list_price{color:#ccc;text-decoration:line-through;}
@@ -28,7 +28,7 @@
   .hashtag-visual .where-hashtag{border-top:1px solid;border-bottom:1px solid;width:99%;padding:10px 0;text-align:center;}
   .product-border .card{width:50%;}  
   .product-border .card .image-box{width:100%;margin:0;}
-  .product-border .card .image-box img{width:70%;height:70%;}
+  .product-border .card .image-box img{width:90%;height:90%;}
   .product-border .inner span.current_price{font-size:16px;}
 }
 
@@ -37,7 +37,7 @@
   .hashtag-visual .where-hashtag{border-top:1px solid;border-bottom:1px solid;width:99%;padding:10px 0;text-align:center;}
   .product-border .card{width:31.3%;}  
   .product-border .card .image-box{width:100%;margin:0;}
-  .product-border .card .image-box img{width:70%;height:70%;}
+  .product-border .card .image-box img{width:90%;height:90%;}
 }
 
 
@@ -46,6 +46,8 @@
 .show-wrap .container .go_back{display:none;}
 .show-wrap .image-box{float:left;width:45%;margin-right:5%;position:relative;height:350px;}
 .show-wrap .image-box img{width:70%;height:70%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;} 
+.show-wrap .featured-img-box{}
+.show-wrap .featured-img-box img{width:85%;height:85%;}
 .show-wrap .inner{float:left;width:50%;}
 .show-wrap .inner .btn p.hashtag{text-align:left;margin-top:10px;}
 .show-wrap .inner .detail_info{}
@@ -81,6 +83,7 @@
   .show-wrap .image-box{width:100%;height:300px;margin:0;}
   .show-wrap .featured-img-box{float:none;}
   .show-wrap .image-box img{width:75%;height:75%;}
+  .show-wrap .featured-img-box img{width:95%;height:95%;}
   .show-wrap .inner{float:none;width:100%;}
   .show-wrap .summary_title{margin:0.5em 3em -2.5em 1.2em;}
   .show-wrap .receipt{margin:3em 2em 0 2em;width:auto;}
