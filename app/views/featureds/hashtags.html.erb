@@ -26,8 +26,9 @@
           </div>
           <div class="inner">
             <p class="line-break-01"><%= link_to featured.f_title, featured%></p>
-            
-              <span class="list_price"><%= number_to_currency(featured.f_was_price, locale: :kr) %>원</span>
+              <% if featured.f_was_price.present? %>
+                <span class="list_price"><%= number_to_currency(featured.f_was_price, locale: :kr) %>원</span>
+              <% end %>
               <span class="current_price"><%= number_to_currency(featured.f_is_price, locale: :kr) %>원</span>
           </div>
         </div>
