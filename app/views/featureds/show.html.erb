@@ -46,7 +46,11 @@
       
         <!-- Button Section -->
         <div class="btn">
-          <a class="amz_btn" target="_blank" href="<%= @featured.f_link %>"><%= @featured.f_source %>에서 구매하기</a>
+          <% if @featured.f_source.present? %>
+            <a class="amz_btn" target="_blank" href="<%= @featured.f_link %>"><%= @featured.f_source %>에서 구매하기</a>
+          <% else %>
+            <a class="amz_btn" target="_blank" href="<%= @featured.f_link %>">쿠팡에서 구매하기</a>
+          <% end %>
           <% if current_user && current_user.admin %>
             <p class="hashtag"><%= render_with_fhashtags(@featured.f_hashtag) %></p>
             <div class="admin">
