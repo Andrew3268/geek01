@@ -48,14 +48,13 @@
 
             <p class="total_price "><%= number_to_currency(@sale.s_is_price, locale: :kr) %>원</p>
 
-            
           </div>
         </div>
       
 
         <!-- Button Section -->
-        <div class="btn clearfix">
-          <a class="amz_btn" target="_blank" href="<%= @sale.s_link %>">쿠팡에서 <%= number_to_currency(discount_price, locale: :kr) %>원 할인받기</a>
+        <div class="btn-box clearfix">
+          <a class="btn" target="_blank" href="<%= @sale.s_link %>">쿠팡에서 <%= number_to_currency(discount_price, locale: :kr) %>원 할인받기</a>
           <% if current_user && current_user.admin %>
             <div class="admin">
               <%= link_to 'Back', sales_path %> | 

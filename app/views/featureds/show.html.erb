@@ -21,61 +21,91 @@
       </div>
 
       <div class="inner clearfix">
+        <% if @featured.f_source.present? %>
+          <span class="source">by <%= @featured.f_source %></span>
+        <% else %>
+          <span class="source">by 쿠팡</span>
+        <% end %>
+
         <p class="f_title"><%= @featured.f_title %></p>
         
         <div class="detail_info clearfix">
-          <div class="info-box">
-            <p>평점</p>
-            <% if @featured.f_spare_01.present? %>
-              <span><%= @featured.f_spare_01 %> / 5.0</span>
-            <% else %>
-              <span> - </span>
-            <% end %>
-          </div>
-          <div class="info-box">
-            <p>리뷰</p>
-            <% if @featured.f_spare_02.present? %>
-              <span><%= @featured.f_spare_02 %> +</span>
-            <% else %>
-              <span> - </span>
-            <% end %>
-          </div>
-        </div>
-        <div class="info-box-price">
-          <p>가격</p>
-          <% if @featured.f_was_price.present? %>
-            <span class="was"><%= number_to_currency(@featured.f_was_price, locale: :kr) %>원</span>
-          <% end %>
+          
           <span class="is"><%= number_to_currency(@featured.f_is_price, locale: :kr) %>원</span>
-        </div>
+          <div class="info-box-box clearfix">
 
+            <% if @featured.f_source.present? %>
+              <div class="info-box no-pang">
+              <p>평점</p>
+              <% if @featured.f_spare_01.present? %>
+                <span><%= @featured.f_spare_01 %> / 5.0</span>
+              <% else %>
+                <span> - </span>
+              <% end %>
+              </div>
+              <div class="info-box no-pang">
+                <p>리뷰</p>
+                <% if @featured.f_spare_02.present? %>
+                  <span><%= @featured.f_spare_02 %> +</span>
+                <% else %>
+                  <span> - </span>
+                <% end %>
+              </div>
+            <% else %>
+              <div class="info-box">
+                <p>평점</p>
+                <% if @featured.f_spare_01.present? %>
+                  <span><%= @featured.f_spare_01 %> / 5.0</span>
+                <% else %>
+                  <span> - </span>
+                <% end %>
+              </div>
+              <div class="info-box">
+                <p>리뷰</p>
+                <% if @featured.f_spare_02.present? %>
+                  <span><%= @featured.f_spare_02 %> +</span>
+                <% else %>
+                  <span> - </span>
+                <% end %>
+              </div>
+              <div class="info-box">
+                <p>로켓배송</p>
+                <% if @featured.f_spare_04.present? %>
+                  <span>YES</span>
+                <% else %>
+                  <span>-</span>
+                <% end %>
+              </div>
+           <% end %>
+
+          </div><!--./info-box-box-->
+        </div><!--./detail_info-->
       
         <!-- Button Section -->
-        <div class="btn">
+        <div class="btn-box">
           <% if @featured.f_source.present? %>
-            <a class="amz_btn" target="_blank" href="<%= @featured.f_link %>"><%= @featured.f_source %>에서 구매하기</a>
+            <a class="btn" target="_blank" href="<%= @featured.f_link %>"><%= @featured.f_source %>에서 구매하기</a>
           <% else %>
-            <a class="amz_btn" target="_blank" href="<%= @featured.f_link %>">쿠팡에서 구매하기</a>
+            <a class="btn" target="_blank" href="<%= @featured.f_link %>">쿠팡에서 구매하기</a>
           <% end %>
-          <% if current_user && current_user.admin %>
-            <p class="hashtag"><%= render_with_fhashtags(@featured.f_hashtag) %></p>
-            <div class="admin">
-              <%= link_to 'Back', featureds_path %> | 
-              <%= link_to 'Edit', edit_featured_path(@featured) %> |
-              <%= link_to 'Destroy', @featured, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
+        </div>
+        <br />
+        <div class="notice">
+          <span>"<%= @featured.f_title %>"의 가격과 평점은 변경될 수 있으며 빠르게 품절될 수도 있어요.</span>
+          <% if @featured.f_source.present? %>
+          <% else %>
+            <span>파트너스 활동을 통해 일정의 수수료를 받을 수 있습니다.</span>
           <% end %>
         </div>
 
-        <div class="notice">
-          <span>- "<%= @featured.f_title %>"의 가격은 포스팅 이후 변경 및 품절 될 수 있습니다.</span>
-          <% if @featured.f_source.present? %>
-          <% else %>
-            <span>- 파트너스 활동을 통해 일정의 수수료를 받을 수 있습니다.</span>
-          <% end %>
-          
-          <!-- <span></span> -->
-        </div>
+        <% if current_user && current_user.admin %>
+          <div class="admin">
+            <p class="hashtag"><%= render_with_fhashtags(@featured.f_hashtag) %></p>
+            <%= link_to 'Back', featureds_path %> | 
+            <%= link_to 'Edit', edit_featured_path(@featured) %> |
+            <%= link_to 'Destroy', @featured, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% end %>
 
       </div><!--./inner-->
     </div><!--./container-->
