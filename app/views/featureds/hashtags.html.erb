@@ -18,7 +18,7 @@
       </div>
     <% end %>
 
-    <div class="product-border clearfix">
+    <div class="product-border featured-border clearfix">
       <% @featureds.each do |featured| %>
         <div class="card">
           <div class="image-box">
@@ -29,7 +29,13 @@
               <% if featured.f_was_price.present? %>
                 <span class="list_price"><%= number_to_currency(featured.f_was_price, locale: :kr) %>원</span>
               <% end %>
-              <span class="current_price"><%= number_to_currency(featured.f_is_price, locale: :kr) %>원</span>
+              <span class="current_price"><%= number_to_currency(featured.f_is_price, locale: :kr) %>원
+                <% if featured.f_source.present? %>
+                  <span class="source">by <%= featured.f_source %></span>
+                <% else %>
+                  <span class="source">by 쿠팡</span>
+                <% end %>
+              </span>
           </div>
         </div>
       <% end %>
