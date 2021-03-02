@@ -22,20 +22,31 @@
       <% @featureds.each do |featured| %>
         <div class="card">
           <div class="image-box">
-            <%= link_to image_tag(featured.f_image), featured %>
+            <% if featured.f_spare_03.present? %>
+              <div class="contain">
+                <%= link_to image_tag(featured.f_image, alt: featured.f_title, title: featured.f_title), featured %>
+              </div>
+            <% else %>
+              <%= link_to image_tag(featured.f_image, alt: featured.f_title, title: featured.f_title), featured %>  
+            <% end %>
           </div>
           <div class="inner">
-            <p class="line-break-01"><%= link_to featured.f_title, featured%></p>
-              <% if featured.f_was_price.present? %>
-                <span class="list_price"><%= number_to_currency(featured.f_was_price, locale: :kr) %>원</span>
+            <% if featured.f_source.present? %>
+              <span class="source">by <%= featured.f_source %></span>
+            <% else %>
+              <span class="source">by 쿠팡</span>
+            <% end %>
+            <p><%= link_to featured.f_title, featured%></p>
+            <% if featured.f_was_price.present? %>
+              <span class="list_price"><%= number_to_currency(featured.f_was_price, locale: :kr) %>원</span>
+            <% end %>
+            <span class="current_price"><%= number_to_currency(featured.f_is_price, locale: :kr) %>원
+              <% if featured.f_source.present? %>
+                <span class="source">by <%= featured.f_source %></span>
+              <% else %>
+                <span class="source">by 쿠팡</span>
               <% end %>
-              <span class="current_price"><%= number_to_currency(featured.f_is_price, locale: :kr) %>원
-                <% if featured.f_source.present? %>
-                  <span class="source">by <%= featured.f_source %></span>
-                <% else %>
-                  <span class="source">by 쿠팡</span>
-                <% end %>
-              </span>
+            </span>
           </div>
         </div>
       <% end %>

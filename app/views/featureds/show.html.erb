@@ -82,7 +82,7 @@
         </div><!--./detail_info-->
       
         <!-- Button Section -->
-        <div class="btn-box">
+        <div class="btn-box featured-btn-box">
           <% if @featured.f_source.present? %>
             <a class="btn" target="_blank" href="<%= @featured.f_link %>"><%= @featured.f_source %>에서 구매하기</a>
           <% else %>
@@ -90,14 +90,14 @@
           <% end %>
         </div>
         <br />
-        <div class="notice">
+        <div class="notice featured-notice">
           <span>"<%= @featured.f_title %>"의 가격과 평점은 변경될 수 있으며 빠르게 품절될 수도 있어요.</span>
           <% if @featured.f_source.present? %>
           <% else %>
             <span>파트너스 활동을 통해 일정의 수수료를 받을 수 있습니다.</span>
           <% end %>
         </div>
-
+        <br />
         <% if current_user && current_user.admin %>
           <div class="admin">
             <p class="hashtag"><%= render_with_fhashtags(@featured.f_hashtag) %></p>

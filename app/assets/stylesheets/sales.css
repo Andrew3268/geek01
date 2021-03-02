@@ -104,6 +104,7 @@
   .show-wrap .title{margin:300px 2em 0 2em;width:87%;}
   .show-wrap .title h2{font-size:13px;}
   .show-wrap .btn, .show-wrap .total-notice, .show-wrap .notice{width:auto;margin:5%;}
+  .show-wrap .featured-btn-box .btn, .show-wrap .featured-notice{margin:0;}
   .show-wrap .container .go_back{display:block;width:40px;height:40px;opacity:0.1;margin:1em 0 0 1.5em;}
 }
 
