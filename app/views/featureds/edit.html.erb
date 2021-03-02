@@ -1,7 +1,32 @@
 <% if current_user && current_user.admin %>
   <div class="wrap">
     <h1>Editing Featured</h1>
-    <%= render 'form', featured: @featured %>
+    <div class="hotdeal_form">
+      <%= simple_form_for(@featured) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <%= f.select :f_spare_03, ([["Object_fit:contain", ""], "Yes"])%>
+        <div class="basic_info">
+          <%= f.input :f_image, label: "이미지 주소" %>
+          <%= f.input :f_title, label: "상품이름" %>
+          <%= f.input :f_link, label: "판매주소" %>
+          <%= f.input :f_source, label: "판매사이트" %>
+          <%= f.input :f_hashtag, label: "해시태그" %>
+        </div>
+
+        <div class="pricing clearfix">
+          <%= f.input :f_is_price, label: "현재가격" %>
+          <%= f.input :f_was_price, label: "세일전 가격" %>
+          <%= f.input :f_spare_01, label: "평점" %>
+          <%= f.input :f_spare_02, label: "리뷰 수" %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
+    </div>
     <%= link_to 'Show', @featured %> |
     <%= link_to 'Back', featureds_path %>
   </div>

@@ -3,6 +3,7 @@
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
+    <%= f.select :f_spare_03, options_for_select([["Object_fit:contain", ""], "Yes"])%>
     <div class="basic_info">
       <%= f.input :f_image, label: "이미지 주소" %>
       <%= f.input :f_title, label: "상품이름" %>

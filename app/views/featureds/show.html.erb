@@ -10,8 +10,14 @@
         }
       </script>
 
-      <div class="image-box featured-img-box  clearfix">
-        <img src="<%= @featured.f_image %>" alt="<%= @featured.f_title %>" title="<%= @featured.f_title %>" />
+      <div class="image-box featured-img-box clearfix">
+        <% if @featured.f_spare_03.present? %>
+          <div class="contain">
+            <img src="<%= @featured.f_image %>" alt="<%= @featured.f_title %>" title="<%= @featured.f_title %>" />
+          </div>
+        <% else %>
+          <img src="<%= @featured.f_image %>" alt="<%= @featured.f_title %>" title="<%= @featured.f_title %>" />
+        <% end %>
       </div>
 
       <div class="inner clearfix">
@@ -62,7 +68,7 @@
         </div>
 
         <div class="notice">
-          <span>- 상품 가격은 포스팅 이후 변경 될 수 있습니다.</span>
+          <span>- "<%= @featured.f_title %>"의 가격은 포스팅 이후 변경 및 품절 될 수 있습니다.</span>
           <% if @featured.f_source.present? %>
           <% else %>
             <span>- 파트너스 활동을 통해 일정의 수수료를 받을 수 있습니다.</span>
