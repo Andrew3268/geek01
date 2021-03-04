@@ -4,7 +4,7 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <%= f.select :f_spare_03, options_for_select([["Object_fit:contain", ""], "Yes"])%>
-    <%= f.select :f_spare_04, options_for_select([["로켓배송", ""], "Yes"])%>
+    
     <br />
     <div class="basic_info">
       <%= f.input :f_image, label: "이미지 주소" %>
@@ -16,9 +16,10 @@
 
     <div class="pricing clearfix">
       <%= f.input :f_is_price, label: "현재가격" %>
-      <%= f.input :f_was_price, label: "세일전 가격" %>
+      <!-- <%= f.input :f_was_price, label: "세일전 가격" %> -->
       <%= f.input :f_spare_01, label: "평점" %>
       <%= f.input :f_spare_02, label: "리뷰 수" %>
+      <%= f.select :f_spare_04, options_for_select([["로켓배송", ""], "Yes"])%>
     </div>
 
     <div class="form-actions">
