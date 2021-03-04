@@ -1,6 +1,11 @@
 class Featured < ApplicationRecord
+  
+  extend FriendlyId
+  friendly_id :f_spare_05, use: :slugged
+
   has_and_belongs_to_many :tags
   belongs_to :user
+
 
   after_create do
     featured = Featured.find_by(id: self.id)

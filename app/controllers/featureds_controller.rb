@@ -70,13 +70,13 @@ class FeaturedsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_featured
-      @featured = Featured.find(params[:id])
+      @featured = Featured.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def featured_params
       params.require(:featured).permit(:f_title, :f_link, :f_source, :f_video, :f_hashtag, :f_description, :f_image, :f_is_price, :f_was_price,
-                                       :f_spare_01, :f_spare_02, :f_spare_03, :f_spare_04)
+                                       :f_spare_01, :f_spare_02, :f_spare_03, :f_spare_04, :f_spare_05)
     end
 end
 
