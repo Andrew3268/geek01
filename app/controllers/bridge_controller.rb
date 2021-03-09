@@ -7,4 +7,5 @@ class BridgeController < ApplicationController
     @picks = Pick.all.order("created_at DESC")
     @featureds = Featured.all.order("created_at DESC")
   end
+  
 end

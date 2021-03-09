@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get '/featureds/fhashtag/:name', to:'featureds#hashtags'
   get '/picks/phashtag/:name', to:'picks#hashtags'
 
+
+  #Bridge Page
   get '/bridge/hashtags'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     @sales = Sale.all.order("created_at DESC").limit(8)
     @featureds = Featured.all.order("created_at DESC").limit(8)
     @picks = Pick.all.order("created_at DESC").limit(8)
+    @themes = Theme.all.order("created_at DESC")
   end
 
   # GET /posts/1

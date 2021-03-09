@@ -1,0 +1,52 @@
+<div class="wrap">
+  <div class="blog-card clearfix">
+
+    
+    <div class="card left">
+      <div class="img-box">
+        <a class="to_tag" href="/featureds/fhashtag/여기해시태그">
+          <img src="https://images.unsplash.com/photo-1529088205386-9460b218a14b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8bXVnfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" text="">
+        </a>
+      </div>
+      <div class="inner">
+        <span>Source</span>
+        <p>Title</p>
+        <em>Avenue71</em>
+      </div>
+    </div>
+
+    <div class="card middle clearfix">
+      <h3>Editor's Picks<span><a href="/picks">See All</a></span></h3>
+      <% @picks.first(4).each do |pick| %>
+       <a href="/featureds/fhashtag/<%= pick.p_link %>">
+        <div class="feat_card clearfix">
+          <div class="img-box">
+            <img src="<%= pick.p_image %>" alt="<%= pick.p_title %>" text="<%= pick.p_title %>">
+          </div>
+          <div class="inner">
+            <span><%= pick.p_hashtag %></span>
+            <p class="line-break-02"><%= pick.p_title %></p>
+          </div>
+        </div>
+      </a>
+      <% end %>
+    </div>
+
+    <div class="card right">
+      <h3>HotDeal Guide<span><a href="/themes">See All</a></span></h3>
+      <% @themes.first(2).each do |theme| %>
+        <a class="to_tag" href="/sales/hashtag/<%= theme.t_link %>">
+          <div class="theme-card">
+            <div class="img-box">
+              <img src="<%= theme.t_image %>" alt="<%= theme.t_title %>" text="<%= theme.t_title %>">
+            </div>
+            <div class="inner">
+              <p><%= theme.t_title %></p>
+            </div>
+          </div>
+        </a>
+      <% end %>
+    </div>
+
+  </div>
+</div>

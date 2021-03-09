@@ -1,7 +1,7 @@
 class Sale < ApplicationRecord
 
   extend FriendlyId
-  friendly_id :s_title, use: :slugged
+  friendly_id :s_spare_01, use: :slugged
 
   has_and_belongs_to_many :tags
   belongs_to :user
