@@ -54,7 +54,8 @@
     <%= raw pagy_nav(@pagy) %>
 
     <div class="back_btn_mobile">
-      <a href="/picks" onclick="goBack()"><img class="back_btn_m" src="<%=asset_path 'back_btn.png' %>" alt="뒤로가기" /></a>
+      <!-- <a href="/picks" onclick="goBack()"><img class="back_btn_m" src="<%=asset_path 'back_btn.png' %>" alt="뒤로가기" /></a> -->
+      <button onclick="goBack()"><img class="go_back" src="<%=asset_path 'back_btn.png' %>" alt="뒤로가기" /></button>
       <script>
         function goBack() {
           window.history.back();
