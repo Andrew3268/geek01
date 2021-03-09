@@ -2,7 +2,7 @@
   <div class="wrap">
 
     <div class="container clearfix">
-      <a href="/sales"><img class="go_back" src="<%=asset_path 'go_back.png' %>" alt="Go bact to home" /></a>
+      <!-- <a href="/sales"><img class="go_back" src="<%=asset_path 'go_back.png' %>" alt="Go bact to home" /></a> -->
       <div class="image-box clearfix">
         <img src="<%= @sale.s_image %>" alt="<%= @sale.s_title %>" title="<%= @sale.s_title %>" />
       </div>
@@ -73,6 +73,11 @@
       </div><!--./inner->
     
     </div><!--./container-->
+
+    <div class="two-btn">
+      <a href="/sales"><img src="<%=asset_path 'go_back.png' %>">home</a>
+      <a href="/themes"><img src="<%=asset_path 'go_back.png' %>">Sale Guide</a>
+    </div>
 
 
   </div>

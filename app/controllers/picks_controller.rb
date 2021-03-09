@@ -5,7 +5,7 @@ class PicksController < ApplicationController
   # GET /picks
   # GET /picks.json
   def index
-    @pagy, @picks = pagy(Pick.all.order("created_at DESC"), items: 80)
+    @pagy, @picks = pagy(Pick.all.order("created_at DESC"), items: 1)
   end
 
   # GET /picks/1

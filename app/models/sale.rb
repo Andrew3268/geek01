@@ -7,6 +7,7 @@ class Sale < ApplicationRecord
   belongs_to :user
 
   validates :s_is_price, presence: true
+  validates :s_was_price, presence: true
 
   after_create do
     sale = Sale.find_by(id: self.id)
