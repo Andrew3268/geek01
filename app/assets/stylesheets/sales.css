@@ -28,6 +28,7 @@
 .product-border .inner span.list_price{color:#ccc;text-decoration:line-through;}
 .product-border .inner span.current_price{font-size:20px;font-weight:600;color:#3d3d3d;}
 .product-border .inner span.current_price span.source{font-size:11px;}
+.product-border .inner span.view_count{font-size:13px;color:#ccc;float:right;}
 
 @media screen and (max-width:640px){
   .visual{margin-bottom:15px;}

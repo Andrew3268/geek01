@@ -11,6 +11,7 @@ class FeaturedsController < ApplicationController
   # GET /featureds/1
   # GET /featureds/1.json
   def show
+    impressionist(@featured)
   end
 
   def hashtags

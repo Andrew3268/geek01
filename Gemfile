@@ -11,7 +11,7 @@ gem 'jquery-rails'
 gem 'meta-tags'
 gem 'sitemap_generator'
 gem 'whenever', require: false
-
+gem 'impressionist'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

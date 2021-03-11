@@ -1,4 +1,5 @@
 class Featured < ApplicationRecord
+  is_impressionable
   
   extend FriendlyId
   friendly_id :f_spare_05, use: :slugged

@@ -11,6 +11,7 @@ class SalesController < ApplicationController
   # GET /sales/1
   # GET /sales/1.json
   def show
+    impressionist(@sale)
   end
 
   def hashtags

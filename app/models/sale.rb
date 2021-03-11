@@ -1,4 +1,5 @@
 class Sale < ApplicationRecord
+  is_impressionable
 
   extend FriendlyId
   friendly_id :s_spare_01, use: :slugged
