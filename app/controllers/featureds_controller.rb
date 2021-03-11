@@ -11,7 +11,11 @@ class FeaturedsController < ApplicationController
   # GET /featureds/1
   # GET /featureds/1.json
   def show
+    #without IP_adress
     impressionist(@featured)
+    
+    #with IP_adress
+    # impressionist(@featured, nil, unique: [:ip_address])
   end
 
   def hashtags

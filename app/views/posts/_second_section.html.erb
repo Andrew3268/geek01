@@ -15,6 +15,22 @@
       </div>
     </div>
 
+   <!--  <div class="card middle clearfix">
+      <h3>Most Favorites<span><a href="/picks">See All</a></span></h3>
+      <% @most_featured.each do |most| %>
+        <div class="feat_card clearfix">
+          <div class="img-box">
+            <%= link_to image_tag(most.f_image, alt: most.f_title, title: most.f_title), most %>
+          </div>
+          <div class="inner">
+            <span><%= most.f_hashtag %></span>
+            <p class="line-break-02"><%= link_to most.f_title, most %></p>
+            <p>views: <%= most.impressionist_count %></p>
+          </div>
+        </div>
+      <% end %>
+    </div> -->
+
     <div class="card middle clearfix">
       <h3>Editor's Picks<span><a href="/picks">See All</a></span></h3>
       <% @picks.first(4).each do |pick| %>
@@ -31,6 +47,8 @@
       </a>
       <% end %>
     </div>
+
+
 
     <div class="card right">
       <h3>HotDeal Guide<span><a href="/themes">See All</a></span></h3>

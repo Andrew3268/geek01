@@ -9,6 +9,8 @@ class PostsController < ApplicationController
     @featureds = Featured.all.order("created_at DESC").limit(8)
     @picks = Pick.all.order("created_at DESC").limit(8)
     @themes = Theme.all.order("created_at DESC")
+    # @most_featured = Featured.order(impressions_count: "DESC").take(4)
+    @most_featured = Featured.where(updated_at: 1.days.ago..DateTime.now).order('impressions_count DESC').first(4)
   end
 
   # GET /posts/1

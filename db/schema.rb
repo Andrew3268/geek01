@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_11_164352) do
+ActiveRecord::Schema.define(version: 2021_03_11_165830) do
 
   create_table "featureds", force: :cascade do |t|
     t.integer "user_id"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 2021_03_11_164352) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
+    t.integer "impressions_count"
     t.index ["slug"], name: "index_featureds_on_slug", unique: true
   end
 
