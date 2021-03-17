@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    @sales = Sale.all.order("created_at DESC").limit(8)
+    @sales = Sale.all.order("created_at DESC").limit(12)
     @featureds = Featured.all.order("created_at DESC").limit(8)
     @picks = Pick.all.order("created_at DESC").limit(8)
     @themes = Theme.all.order("created_at DESC")

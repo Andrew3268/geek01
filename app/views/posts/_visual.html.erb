@@ -1,20 +1,23 @@
 <div class="main-visual">
   <div class="cd-slider">
     <ul>
+
       <li>
-        <div class="image" style="background-image:url(https://images.unsplash.com/photo-1421809313281-48f03fa45e9f?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1000);"></div>
+        <div class="image" style="background-image:url(https://i.pinimg.com/originals/b4/26/c3/b426c3f84ea08d3e1b8eefa4140c14ac.png);"></div>
         <div class="content">
-          <h2>급속 미모 충전</h2>
-          <a href="/sales">자세히 보러가기</a>
+          <h2>냥이 덕후들을 위한 <br>Cat Goods</h2>
+          <a href="/featureds/fhashtag/고양이_덕후들에게">자세히 보러가기</a>
         </div>
       </li>
-      <li>
+
+    <!--   <li>
         <div class="image" style="background-image:url(https://images.unsplash.com/uploads/1411724908903377d4696/2e9b0cb2?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1000);"></div>
         <div class="content">
           <h2>이거 하나면 자취생활 꿀!</h2>
           <a href="#">View Gallery</a>
         </div>
       </li>
+
       <li>
         <div class="image" style="background-image:url(https://images.unsplash.com/photo-1416838375725-e834a83f62b7?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1000);"></div>
         <div class="content">
@@ -22,6 +25,7 @@
           <a href="#">View Gallery</a>
         </div>
       </li>
+
       <li>
         <div class="image" style="background-image:url(https://images.unsplash.com/35/JOd4DPGLThifgf38Lpgj_IMG.jpg?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1000);"></div>
         <div class="content">
@@ -29,13 +33,15 @@
           <a href="#">View Gallery</a>
         </div>
       </li>
+
       <li>
         <div class="image" style="background-image:url(https://images.unsplash.com/photo-1453974336165-b5c58464f1ed?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1000);"></div>
         <div class="content">
           <h2>Summer Collection</h2>
           <a href="#">View Gallery</a>
         </div>
-      </li>      
+      </li>   
+ -->
     </ul>
   </div> <!--/.cd-slider-->
 </div>
@@ -46,7 +52,8 @@
     function init(item) {
       var items = item.querySelectorAll('li'),
           current = 0,
-          autoUpdate = true,
+          // slide = true, non-slide = false
+          autoUpdate = false,
           timeTrans = 4000;
           
       //create nav
@@ -103,7 +110,8 @@
       });
 
       item.addEventListener('mouseleave', function() {
-        autoUpdate = true;
+        // slide = true, non-slide = false
+        autoUpdate = false;
       });
 
       setInterval(function() {

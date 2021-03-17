@@ -39,7 +39,8 @@
               <% if featured.f_source.present? %>
                 <span class="source">by <%= featured.f_source %></span>
               <% else %>
-                <span class="source">by 쿠팡 <em>views: <%= featured.impressionist_count %></em></span>
+                <span class="source">by 쿠팡 <% if current_user && current_user.admin %><em>views: <%= featured.impressionist_count %></em>
+                <% end %></span>
               <% end %>
             </span>
           </div>

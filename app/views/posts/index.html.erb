@@ -1,13 +1,11 @@
 <%= render 'shared/header' %>
 <%= render 'posts/visual'%>
 
-<%= render 'posts/second_section'%>
-
 <div class="contents-box">
   <div class="wrap">
 
     <div class="ctn-card cb_01 clearfix">
-      <h2>Today's Hotdeal Picks</h2>
+      <h2>Today's Picks of Hotdeals</h2>
       <div class="product-border clearfix">
         <% @sales.each do |sale| %>
           <div class="card">
@@ -61,6 +59,8 @@
 
   </div><!--./contents-box-->
 
+  
+  <%= render 'posts/second_section'%>
   
 
   <div class="footer">
