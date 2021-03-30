@@ -26,7 +26,8 @@
           </div>
           <div class="inner">
             <% if featured.f_source.present? %>
-              <span class="source">by <%= featured.f_source %></span>
+              <span class="source">by <%= featured.f_source %> <% if current_user && current_user.admin %><em>views: <%= featured.impressionist_count %></em>
+                <% end %></span>
             <% else %>
               <span class="source">by 쿠팡 <% if current_user && current_user.admin %><em>views: <%= featured.impressionist_count %></em>
                 <% end %></span>
@@ -37,7 +38,8 @@
             <% end %>
             <span class="current_price"><%= number_to_currency(featured.f_is_price, locale: :kr) %>원
               <% if featured.f_source.present? %>
-                <span class="source">by <%= featured.f_source %></span>
+                <span class="source">by <%= featured.f_source %> <% if current_user && current_user.admin %><em>views: <%= featured.impressionist_count %></em>
+                <% end %></span>
               <% else %>
                 <span class="source">by 쿠팡 <% if current_user && current_user.admin %><em>views: <%= featured.impressionist_count %></em>
                 <% end %></span>

@@ -54,6 +54,8 @@
 .blog-card .right .theme-card .inner p{font-size:15px;margin:10px 0 0 0;color:#3d3d3d;}
 
 
+
+
 @media screen and (max-width:640px){
   .blog-card .card{float:none;width:100%;margin:30px 0 0 0;height:auto;}
   .blog-card .middle .feat_card .img-box{height:100px;}

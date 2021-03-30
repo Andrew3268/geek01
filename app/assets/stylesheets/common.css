@@ -144,7 +144,7 @@ header .header-container .icons .block{display: inline-block;}
 .category-pc:before, .category-pc:after{content:"";background:#ccc;padding:0.5px;-webkit-box-flex:100%;flex:100%;visibility:visible}
 
 @media screen and (max-width:640px){
-  .visual{margin:0 3%;}
+  .visual{margin:0 1%;}
   .visual h1{margin-left:8px;}
   .visual ul{display:block;margin:0 auto;overflow-x:scroll;white-space:nowrap;overflow-y:hidden;}
   .visual ul li{float:none;display:inline-block;margin-right:10px;line-height:30px;text-transform:uppercase;}
