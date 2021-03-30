@@ -8,8 +8,4 @@ class BridgeController < ApplicationController
     @featureds = Featured.all.order("created_at DESC")
   end
 
-  def gram
-    @picks = Pick.all.order("created_at DESC").limit(10)
-  end
-  
 end
