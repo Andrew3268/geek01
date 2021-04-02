@@ -32,23 +32,27 @@
               <a class="to_tag" href="/featureds/fhashtag/<%= pick.p_link %>"><img src="<%= pick.p_image %>"></a>
           </div>
           <div class="card-body">
-            <span class="tag tag-teal">
-              <%= render_with_phashtags(pick.p_hashtag) %>
-            </span>
+            <p class="tag tag-teal"><a href="/picks/phashtag/<%= pick.p_spare_01 %>">#<%= pick.p_spare_01 %></p>
             <% if current_user && current_user.admin %>
-              <span>
-                  <%= link_to 'Edit', edit_pick_path(pick) %>
-                  <%= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' } %>            
-              </span>
+              <p class="tag series"><%= render_with_phashtags(pick.p_hashtag) %></p>
             <% end %>
+            
             <a class="to_tag" href="/featureds/fhashtag/<%= pick.p_link %>"><h4><%= pick.p_title %></h4></a>
             <!-- <p><%= pick.p_description %></p> -->
             <div class="card-user">
-                <img src="<%=asset_path 'ave71.png' %>" alt="Avenue71">
-                <div class="user-info">
-                    <h5 >Editor</h5>
-                    <small >Avenue71</small>
-                </div>
+              <img src="<%=asset_path 'ave71.png' %>" alt="Avenue71">
+              <div class="user-info">
+                  <h5 >Editor</h5>
+                  <small >Avenue71</small>
+              </div>
+              <div class="admin_management">
+              <% if current_user && current_user.admin %>
+                <span>
+                    <%= link_to 'Edit', edit_pick_path(pick) %>
+                    <%= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' } %>            
+                </span>
+              <% end %>
+            </div>
             </div>
           </div>
         </div>

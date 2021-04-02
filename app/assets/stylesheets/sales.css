@@ -67,9 +67,9 @@
 .show-wrap .inner{float:left;width:50%;}
 .show-wrap .inner .btn p.hashtag{text-align:left;margin-top:10px;}
 .show-wrap .inner .source{font-size:13px;}
-.show-wrap .inner p.f_title{margin-bottom:10px;font-size:24px;word-break:keep-all;}
+.show-wrap .inner p.f_title{margin-bottom:10px;font-size:20px;word-break:keep-all;}
 .show-wrap .inner .detail_info{}
-.show-wrap .inner .detail_info span.is{font-size:25px;color:#3d3d3d;}
+.show-wrap .inner .detail_info span.is{font-size:25px;color:#3d3d3d;text-decoration:underline;}
 .show-wrap .inner .detail_info .info-box{float:left;width:31.33%;margin:1%;padding:20px 10px;text-align:center;box-shadow:0 0 5px rgba(0,0,0,0.15);border-radius:15px;}
 .show-wrap .inner .detail_info .no-pang{width:48%;}
 .show-wrap .summary_title{margin-top:2em;}
