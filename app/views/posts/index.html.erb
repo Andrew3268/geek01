@@ -3,9 +3,8 @@
 
 <div class="contents-box">
   <div class="wrap">
-
     <div class="ctn-card cb_01 clearfix">
-      <h2>Today's Picks of Hotdeals</h2>
+      <h2>Today's 핫딜 Pick</h2>
       <div class="product-border clearfix">
         <% @sales.each do |sale| %>
           <div class="card">
@@ -31,33 +30,7 @@
       <a href="/sales">View More</a>
     </div>
 
-    <!-- <div class="ctn-card cb_03 clearfix">
-      <h2>Editor's Picks</h2>
-      <div class="pick-box clearfix">
-        <% @picks.each do |pick| %>
-          <a href="/featureds/fhashtag/<%= pick.p_link %>">
-            <div class="card">
-              <img src="<%= pick.p_image%>" alt="<%= pick.p_title %>" text="<%= pick.p_title %>">
-              <div class="inner">
-                <h2><%= pick.p_title %></h2>
-                <p><%= pick.p_description %></p>
-                <% if current_user && current_user.admin %>
-                  <%= render_with_phashtags(pick.p_hashtag) %>
-                  <%= link_to 'Edit', edit_pick_path(pick) %>
-                  <%= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% end %>
-              </div>
-            </div>
-          </a>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="show_more_btn">
-      <a href="/picks">View More</a>
-    </div> -->
-
-  </div><!--./contents-box-->
+  </div><!--./wrap-->
 
   
   <%= render 'posts/second_section'%>

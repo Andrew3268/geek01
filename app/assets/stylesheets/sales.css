@@ -45,7 +45,7 @@
 @media screen and (min-width:641px) and (max-width:1199px){
   .hashtag-visual{margin-bottom:15px;}
   .hashtag-visual .where-hashtag{border-top:1px solid;border-bottom:1px solid;width:99%;padding:10px 0;text-align:center;}
-  .product-border .card{width:31.3%;}  
+  .product-border .card{width:33.3%;}  
   .product-border .card .image-box{width:100%;margin:0;}
   .product-border .card .image-box img{object-fit:cover;border-radius:10px}
 }
