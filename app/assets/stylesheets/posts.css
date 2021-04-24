@@ -40,7 +40,7 @@
 
 
 #slide_wrapper{white-space:nowrap;overflow-x:auto;overflow-y:hidden;padding:10px 0;width:1200px;margin-top:20px;}
-#slide_wrapper .items{display:inline-block;padding-right:1%;width:27%;}
+#slide_wrapper .items{display:inline-block;padding:1%;width:33%;}
 #slide_wrapper .items .img_box{}
 #slide_wrapper .items .img_box img{width:100%;height:250px;object-fit:cover;}
 #slide_wrapper .items:first-child{margin-left:0;}

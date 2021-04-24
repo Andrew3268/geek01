@@ -6,6 +6,7 @@
     <div class="visual clearfix">
       <p>지극히 주관적인</p>
       <h2>Editor's Picks</h2>
+      <%= render 'picks/categories' %>
     </div>
 
     <% if current_user && current_user.admin %>
@@ -32,7 +33,7 @@
               <a class="to_tag" href="/featureds/fhashtag/<%= pick.p_link %>"><img src="<%= pick.p_image %>"></a>
           </div>
           <div class="card-body">
-            <p class="tag tag-teal"><a href="/picks/phashtag/<%= pick.p_spare_01 %>">#<%= pick.p_spare_01 %></p>
+            <p class="tag tag-teal"><%= pick.p_spare_01 %></p>
             <% if current_user && current_user.admin %>
               <p class="tag series"><%= render_with_phashtags(pick.p_hashtag) %></p>
             <% end %>
