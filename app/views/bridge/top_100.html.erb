@@ -1,0 +1,63 @@
+<%= render 'shared/header' %>
+<div class="index-wrap">
+  <div class="wrap">
+
+    <div class="visual clearfix">
+    </div>
+
+    <% if current_user && current_user.admin %>
+      <div class="index-amdin">
+        <%= link_to 'New Feautred', new_featured_path %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      </div>
+    <% end %>
+
+    <div class="top_100_title">
+      <h2>TOP 100 Picks</h2>
+    </div>
+
+    <div class="product-border featured-border clearfix">
+      <% @most_picks.each_with_index do |featured, i| %>
+        <div class="card">
+          <div class="image-box">
+            <% if featured.f_spare_03.present? %>
+              <div class="contain">
+                <%= link_to image_tag(featured.f_image, alt: featured.f_title, title: featured.f_title), featured %>
+              </div>
+            <% else %>
+              <%= link_to image_tag(featured.f_image, alt: featured.f_title, title: featured.f_title), featured %>  
+            <% end %>
+          </div>
+          <div class="inner">
+            <% if featured.f_source.present? %>
+              <span class="source">by <%= featured.f_source %> <% if current_user && current_user.admin %><em>views: <%= featured.impressionist_count %></em>
+                <% end %></span>
+            <% else %>
+              <span class="source">by 쿠팡 <% if current_user && current_user.admin %><em>views: <%= featured.impressionist_count %></em>
+                <% end %></span>
+            <% end %>
+            <p><%= link_to featured.f_title, featured%></p>
+            <% if featured.f_was_price.present? %>
+              <span class="list_price"><%= number_to_currency(featured.f_was_price, locale: :kr) %>원</span>
+            <% end %>
+            <span class="current_price"><%= number_to_currency(featured.f_is_price, locale: :kr) %>원
+              <% if featured.f_source.present? %>
+                <span class="source">by <%= featured.f_source %> <% if current_user && current_user.admin %><em>views: <%= featured.impressionist_count %></em>
+                <% end %></span>
+              <% else %>
+                <span class="source">by 쿠팡 <% if current_user && current_user.admin %><em>views: <%= featured.impressionist_count %></em>
+                <% end %></span>
+              <% end %>
+            </span>
+          </div>
+
+          <div class="top_num">
+            <span><%= i+1 %></span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div><!--./wrap-->
+</div><!--./index-wrap->
+

@@ -8,4 +8,8 @@ class BridgeController < ApplicationController
     @featureds = Featured.all.order("created_at DESC")
   end
 
+  def top_100
+    @most_picks = Featured.order("impressions_count DESC").take(100)
+  end
+
 end

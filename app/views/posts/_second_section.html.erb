@@ -2,7 +2,7 @@
   <div class="blog-card clearfix">
 
     
-    <div class="card left">
+   <!--  <div class="card left">
       <div class="img-box">
         <a class="to_tag" href="/featureds/fhashtag/여기해시태그">
           <img src="https://images.unsplash.com/photo-1529088205386-9460b218a14b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8bXVnfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" text="">
@@ -13,22 +13,6 @@
         <p>Title</p>
         <em>Avenue71</em>
       </div>
-    </div>
-
-   <!--  <div class="card middle clearfix">
-      <h3>Most Favorites<span><a href="/picks">See All</a></span></h3>
-      <% @most_featured.each do |most| %>
-        <div class="feat_card clearfix">
-          <div class="img-box">
-            <%= link_to image_tag(most.f_image, alt: most.f_title, title: most.f_title), most %>
-          </div>
-          <div class="inner">
-            <span><%= most.f_hashtag %></span>
-            <p class="line-break-02"><%= link_to most.f_title, most %></p>
-            <p>views: <%= most.impressionist_count %></p>
-          </div>
-        </div>
-      <% end %>
     </div> -->
 
     <div class="card middle clearfix">
@@ -42,6 +26,25 @@
           <div class="inner">
             <span><%= pick.p_hashtag %></span>
             <p class="line-break-02"><%= pick.p_title %></p>
+          </div>
+        </div>
+      </a>
+      <% end %>
+    </div>
+
+    <div class="card middle clearfix">
+      <h3>Most Popular Picks<span><a href="/bridge/top_100">See All</a></span></h3>
+      <% @most_picks.first(4).each do |most_pick| %>
+       <a href="/featureds/fhashtag/<%= most_pick.f_link %>">
+        <div class="feat_card clearfix">
+          <div class="img-box">
+            <img src="<%= most_pick.f_image %>" alt="<%= most_pick.f_title %>" text="<%= most_pick.f_title %>">
+          </div>
+          <div class="inner">
+            <span><%= most_pick.f_hashtag %></span>
+            <p class="line-break-02"><%= most_pick.f_title %></p>
+            <% if current_user && current_user.admin %><em>views: <%= most_pick.impressionist_count %></em>
+                <% end %>
           </div>
         </div>
       </a>

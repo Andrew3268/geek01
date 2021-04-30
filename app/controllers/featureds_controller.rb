@@ -6,6 +6,8 @@ class FeaturedsController < ApplicationController
   # GET /featureds.json
   def index
     @pagy, @featureds = pagy(Featured.all.order("created_at DESC"), items: 80)
+    # @pagy, @featureds  = pagy(Featured.order("impressions_count DESC"), items: 80)
+
   end
 
   # GET /featureds/1
