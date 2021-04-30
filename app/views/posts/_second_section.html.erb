@@ -35,23 +35,19 @@
     <div class="card middle clearfix">
       <h3>Most Popular Picks<span><a href="/bridge/top_100">See All</a></span></h3>
       <% @most_picks.first(4).each do |most_pick| %>
-       <a href="/featureds/fhashtag/<%= most_pick.f_link %>">
         <div class="feat_card clearfix">
           <div class="img-box">
-            <img src="<%= most_pick.f_image %>" alt="<%= most_pick.f_title %>" text="<%= most_pick.f_title %>">
+            <%= link_to image_tag(most_pick.f_image, alt: most_pick.f_title, title: most_pick.f_title), most_pick %>
           </div>
           <div class="inner">
             <span><%= most_pick.f_hashtag %></span>
-            <p class="line-break-02"><%= most_pick.f_title %></p>
+            <p class="line-break-02"><%= link_to most_pick.f_title, most_pick %></p>
             <% if current_user && current_user.admin %><em>views: <%= most_pick.impressionist_count %></em>
                 <% end %>
           </div>
         </div>
-      </a>
       <% end %>
     </div>
-
-
 
     <div class="card right">
       <h3>HotDeal Guide<span><a href="/themes">See All</a></span></h3>
