@@ -89,7 +89,10 @@ p.todays_deal_title{font-weight:100;display:inline;box-shadow:inset 0 -10px 0 rg
 
 @media screen and (max-width:640px){
   .no_deal{width:100%;margin:85px 0 0 0;}
-  .no_deal img{width:400px;}
-  p.todays_deal_title{font-size:18px;padding:0 10px;width:50%;}
+  .no_deal img{width:100%;}
+  p.todays_deal_title{font-size:17px;padding:0 10px;width:53%;}
 }
 
+@media screen and (min-width:641px) and (max-width:1199px){
+  p.todays_deal_title{font-size:20px;padding:0 10px;width:32%;}
+}
