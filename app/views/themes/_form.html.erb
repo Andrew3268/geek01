@@ -4,12 +4,11 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="basic_info">
-      <%= f.input :t_image %>
-      <%= f.input :t_title %>
-      <%= f.input :t_description %>
-      <%= f.input :t_link %>
-      <%= f.input :t_hashtag %>
-      <%= f.input :t_source %>
+      <%= f.input :t_image, label: "썸네일" %>
+      <%= f.input :t_title, label: "제목" %>
+      <%= f.input :t_description, label: "설명" %>
+      <%= f.input :t_link, label: "세일해시태그 주소[]" %>
+      <%= f.input :t_hashtag, label: "Theme 해시태그"  %>
     </div>
 
     <div class="form-actions">

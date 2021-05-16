@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_11_165830) do
+ActiveRecord::Schema.define(version: 2021_05_16_082519) do
 
   create_table "featureds", force: :cascade do |t|
     t.integer "user_id"
@@ -425,6 +425,15 @@ ActiveRecord::Schema.define(version: 2021_03_11_165830) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "themes_tags", id: false, force: :cascade do |t|
+    t.integer "theme_id"
+    t.integer "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tag_id"], name: "index_themes_tags_on_tag_id"
+    t.index ["theme_id"], name: "index_themes_tags_on_theme_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -445,4 +454,6 @@ ActiveRecord::Schema.define(version: 2021_03_11_165830) do
   add_foreign_key "sales", "users"
   add_foreign_key "sales_tags", "sales"
   add_foreign_key "sales_tags", "tags"
+  add_foreign_key "themes_tags", "tags"
+  add_foreign_key "themes_tags", "themes"
 end

@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   #Bridge Page
   get '/bridge/manage_hashtags'
   get '/bridge/top_100'
+  get '/bridge/half_deal'
+  get '/bridge/under_deal'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

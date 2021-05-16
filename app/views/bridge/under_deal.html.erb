@@ -1,0 +1,43 @@
+<%= render 'shared/header' %>
+<div class="index-wrap">
+  <div class="wrap">
+
+    <div class="visual clearfix">
+      <p>너무나 듣고 싶은 한마디</p>
+      <h2>사랑해 보다 오늘 세일해</h2>
+      <%= render 'sales/categories' %>
+    </div>
+
+    <div class="product-border clearfix">
+      <p class="todays_deal_title">#오늘의 만원이하 핫딜's</p>
+      <% @sales_under.each do |sale_under| %>
+        
+          <% if sale_under.s_is_price <= 10000 %>
+            <div class="card">
+              <div class="image-box">
+                <%= link_to image_tag(sale_under.s_image, alt: sale_under.s_title, title: sale_under.s_title), sale_under %>
+              </div>
+              <div class="inner">
+                <p class="line-break-01" data-turbolinks="false"><%= link_to sale_under.s_title, sale_under%></p>
+                <span class="list_price"><%= number_to_currency(sale_under.s_was_price, locale: :kr) %>원</span>
+                <span class="current_price"><%= number_to_currency(sale_under.s_is_price, locale: :kr) %>원</span>
+                <% if current_user && current_user.admin %><span class="view_count">views: <%= sale_under.impressionist_count %></span>
+                    <% end %>
+              </div>
+              <% hotdeal_pct = 0 %>
+              <% hotdeal_pct =  (sale_under.s_was_price - sale_under.s_is_price) / sale_under.s_was_price * 100 %>
+              <div class="pct"><p><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</p></div>
+            </div>
+          <% else %>
+           <div class="no_deal">
+            <img src="<%=asset_path 'no_deal.png' %>">
+           </div>
+          <% end %>
+        
+
+      <% end %>
+    </div>
+  
+    
+  </div><!--./wrap-->
+</div><!--./index-wrap->
