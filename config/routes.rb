@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   get '/bridge/top_100'
   get '/bridge/half_deal'
   get '/bridge/under_deal'
+  get '/bridge/sales'
+  get '/bridge/delete_old_deal'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

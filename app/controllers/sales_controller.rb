@@ -63,7 +63,7 @@ class SalesController < ApplicationController
   def destroy
     @sale.destroy
     respond_to do |format|
-      format.html { redirect_to sales_url, notice: 'Sale was successfully destroyed.' }
+      format.html { redirect_to "/bridge/delete_old_deal", notice: 'Sale was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -77,7 +77,7 @@ class SalesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def sale_params
       params.require(:sale).permit(:s_title, :s_link, :user_id, :s_source, :s_hashtag, :s_video, :s_description,
-                                   :s_is_price, :s_was_price, :s_pct, :s_image, :s_rocket, :s_spare_01)
+                                   :s_is_price, :s_was_price, :s_pct, :s_image, :s_rocket, :s_spare_01, :s_spare_02, :s_spare_03)
     end
 end
 

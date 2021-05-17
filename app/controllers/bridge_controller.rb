@@ -9,7 +9,7 @@ class BridgeController < ApplicationController
   end
 
   def top_100
-    @most_picks = Featured.order("impressions_count DESC").take(100)
+    # @most_picks = Featured.order("impressions_count DESC").take(100)
   end
 
   def half_deal
@@ -20,6 +20,14 @@ class BridgeController < ApplicationController
   def under_deal
     # @sales_under = Sale.all.order("created_at DESC")
     @sales_under = Sale.where(updated_at: 1.days.ago..DateTime.now).order("created_at DESC")
+  end
+
+  def sales
+    @pagy, @sales_index = pagy(Sale.where(updated_at: 1.days.ago..DateTime.now).order("created_at DESC"), items: 80)
+  end
+
+  def delete_old_deal
+    @sales_delete = Sale.all
   end
 
 end

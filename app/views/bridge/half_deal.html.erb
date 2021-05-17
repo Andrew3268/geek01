@@ -18,20 +18,18 @@
           <div class="card">
             <div class="image-box">
               <%= link_to image_tag(sale_half.s_image, alt: sale_half.s_title, title: sale_half.s_title), sale_half %>
+              <% if current_user && current_user.admin %>
+                <span class="updated_time"><%= time_ago_in_words(sale_half.created_at) %> ago</span>
+                <span class="views_count">views: <%= sale_half.impressionist_count %></span>
+              <% end %>
             </div>
             <div class="inner">
               <p class="line-break-01" data-turbolinks="false"><%= link_to sale_half.s_title, sale_half%></p>
               <span class="list_price"><%= number_to_currency(sale_half.s_was_price, locale: :kr) %>원</span>
               <span class="current_price"><%= number_to_currency(sale_half.s_is_price, locale: :kr) %>원</span>
-              <% if current_user && current_user.admin %><span class="view_count">views: <%= sale_half.impressionist_count %></span>
-                  <% end %>
             </div>
             <div class="pct"><p><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</p></div>
           </div>
-        <% else %>
-           <div class="no_deal">
-            <img src="<%=asset_path 'no_deal.png' %>">
-           </div>
         <% end %>
 
       <% end %>

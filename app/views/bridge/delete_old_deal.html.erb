@@ -1,0 +1,25 @@
+<%= render 'shared/header' %>
+<div class="index-wrap">
+  <div class="wrap">
+
+    <div class="destory_old_post">
+      <p>Destory Old Posts // <a href="/">Home</a></p>
+      <table id="customers">
+        <tr>
+          <th>Title</th>
+          <th>Posting Time</th>
+          <th>Destroy</th>
+        </tr>
+        <% @sales_delete.each do |sale| %>
+          <tr>
+            <td><p><%= sale.s_title %></p></td>
+            <td><%= time_ago_in_words(sale.created_at) %> ago</td>
+            <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </table>
+     
+    </div>
+
+  </div>
+</div>

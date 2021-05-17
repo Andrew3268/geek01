@@ -2,13 +2,18 @@
   <div class="wrap">
 
     <div class="container clearfix">
+
       <!-- <a href="/sales"><img class="go_back" src="<%=asset_path 'go_back.png' %>" alt="Go bact to home" /></a> -->
       <div class="image-box clearfix">
         <img src="<%= @sale.s_image %>" alt="<%= @sale.s_title %>" title="<%= @sale.s_title %>" />
       </div>
 
       <div class="title">
-        <h2 class="line-break-02"><%= @sale.s_title %></h2>
+        <!-- <h2 class="line-break-02"><%= @sale.s_title %></h2> -->
+        <h2><%= @sale.s_title %></h2>
+        <% if @sale.s_spare_02.present? %>
+          <span>평점: <%= @sale.s_spare_02 %> / 리뷰 수: <%= @sale.s_spare_03 %> +</span>
+        <% end %>
       </div>
 
       <div class="inner">
