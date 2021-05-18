@@ -14,7 +14,7 @@ class BridgeController < ApplicationController
 
   def half_deal
     # @sales_half = Sale.all.order("created_at DESC")
-    @sales_half = Sale.where(updated_at: 1.days.ago..DateTime.now).order("created_at DESC")
+    @sales_half = Sale.where(updated_at: 1.day.ago..DateTime.now).order("created_at DESC")
   end
 
   def under_deal
