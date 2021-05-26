@@ -38,7 +38,7 @@
       <% @themes.each do |theme| %>
         <div class="card">
           <div class="card-header">
-              <a class="to_tag" href="/sales/hashtag/<%= theme.t_link %>"><img src="<%= theme.t_image %>" alt="<%= theme.t_title %>" text="<%= theme.t_title %>"></a>
+              <a class="to_tag" href="/sales/hashtag/<%= theme.t_link %>"><img class="theme_img" src="<%= theme.t_image %>" alt="<%= theme.t_title %>" text="<%= theme.t_title %>"></a>
           </div>
           <div class="card-body">
             <% if current_user && current_user.admin %>

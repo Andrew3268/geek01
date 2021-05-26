@@ -6,12 +6,14 @@
       <p>Destory Old Posts // <a href="/">Home</a></p>
       <table id="customers">
         <tr>
+          <th>No.</th>
           <th>Title</th>
           <th>Posting Time</th>
           <th>Destroy</th>
         </tr>
-        <% @sales_delete.each do |sale| %>
+        <% @sales_delete.each_with_index do |sale, i| %>
           <tr>
+            <td><%= i + 1 %></td>
             <td><p><%= sale.s_title %></p></td>
             <td><%= time_ago_in_words(sale.created_at) %> ago</td>
             <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
