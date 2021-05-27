@@ -1,17 +1,19 @@
 <%= render 'shared/header' %>
-<div class="index-wrap">
-  <div class="wrap">
+<% if current_user && current_user.admin %>
+  <div class="index-wrap">
+    <div class="wrap">
 
-  
-    <div class="product-border featured-border clearfix">
-      <% @most_picks.each_with_index do |featured, i| %>
-          <div class="top_num">
-            <span><%= i+1 %></span>
+    
+      <div class="product-border featured-border clearfix">
+        <% @most_picks.each_with_index do |featured, i| %>
+            <div class="top_num">
+              <span><%= i+1 %></span>
+            </div>
           </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
 
-  </div><!--./wrap-->
-</div><!--./index-wrap->
+    </div><!--./wrap-->
+  </div><!--./index-wrap-->
 
+<% end %>

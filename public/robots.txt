@@ -6,5 +6,14 @@ Disallow: /sales/edit
 Disallow: /featureds
 Disallow: /featureds/new
 Disallow: /featureds/eidt
+Disallow: /picks/new
+Disallow: /picks/edit
+Disallow: /picks/show
 Disallow: /users/sign_in
 Disallow: /users/sign_up
+
+Disallow: /bridge/delete_old_deal
+Disallow: /bridge/manage_hashtags
+Disallow: /bridge/top_100
+
+
