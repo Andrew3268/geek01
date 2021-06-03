@@ -1,43 +1,76 @@
-<!-- <div class="topoftop"></div> -->
 <%= render 'shared/header' %>
-<div class="index-wrap">
-  <div class="wrap">
+<div id="overlay" class="cover blur-in">
+  
+    <div class="index-wrap">
+      <div class="wrap">
 
-    <div class="visual clearfix">
-      <p>너무나 듣고 싶은 한마디</p>
-      <h2>사랑해 보다 오늘 세일해</h2>
-      <%= render 'sales/categories' %>
-    </div>
-
-    <% if current_user && current_user.admin %>
-      <%= render 'sales/sub_cat' %>
-    <% end %>
-
-    <div class="product-border clearfix">
-      <% @sales_index.each do |sale| %>
-        <div class="card">
-          <div class="image-box">
-            <!-- <a href="/sales/<%= sale.id %>" data-turbolinks="false"><img src="<%= sale.s_image %>" alt="<%= sale.s_title %>" title="<%= sale.s_title %>"></a> -->
-            <%= link_to image_tag(sale.s_image, alt: sale.s_title, title: sale.s_title), sale %>
-            <% if current_user && current_user.admin %>
-              <span class="updated_time"><%= time_ago_in_words(sale.created_at) %> ago</span>
-              <span class="views_count">views: <%= sale.impressionist_count %></span>
-            <% end %>
-          </div>
-
-          <div class="inner">
-            <p class="line-break-01" data-turbolinks="false"><%= link_to sale.s_title, sale%></p>
-            <span class="list_price"><%= number_to_currency(sale.s_was_price, locale: :kr) %>원</span>
-            <span class="current_price"><%= number_to_currency(sale.s_is_price, locale: :kr) %>원</span>
-            <% hotdeal_pct = 0 %>
-            <% hotdeal_pct =  (sale.s_was_price - sale.s_is_price) / sale.s_was_price * 100 %>
-            <span class="pct"><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</span>
-          </div>
-            
+        <div class="visual clearfix">
+          <p>너무나 듣고 싶은 한마디</p>
+          <h2>사랑해 보다 오늘 세일해</h2>
+          <%= render 'sales/categories' %>
         </div>
-      <% end %>
-    </div>
-    <%= raw pagy_nav(@pagy) %>
-    
-  </div><!--./wrap-->
-</div><!--./index-wrap->
+
+        <% if current_user && current_user.admin %>
+          <%= render 'sales/sub_cat' %>
+        <% end %>
+
+        <div class="product-border clearfix">
+          <% @sales_index.each do |sale| %>
+            <div class="card">
+              <div class="image-box">
+                <!-- <a href="/sales/<%= sale.id %>" data-turbolinks="false"><img src="<%= sale.s_image %>" alt="<%= sale.s_title %>" title="<%= sale.s_title %>"></a> -->
+                <%= link_to image_tag(sale.s_image, alt: sale.s_title, title: sale.s_title), sale %>
+                <% if current_user && current_user.admin %>
+                  <span class="updated_time"><%= time_ago_in_words(sale.created_at) %> ago</span>
+                  <span class="views_count">views: <%= sale.impressionist_count %></span>
+                <% end %>
+              </div>
+
+              <div class="inner">
+                <p class="line-break-01" data-turbolinks="false"><%= link_to sale.s_title, sale%></p>
+                <span class="list_price"><%= number_to_currency(sale.s_was_price, locale: :kr) %>원</span>
+                <span class="current_price"><%= number_to_currency(sale.s_is_price, locale: :kr) %>원</span>
+                <% hotdeal_pct = 0 %>
+                <% hotdeal_pct =  (sale.s_was_price - sale.s_is_price) / sale.s_was_price * 100 %>
+                <span class="pct"><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</span>
+              </div>
+                
+            </div>
+          <% end %>
+        </div>
+        <%= raw pagy_nav(@pagy) %>
+        
+      </div><!--./wrap-->
+    </div><!--./index-wrap-->
+
+</div>
+
+<div class="row pop-up">
+  <div class="box small-6 large-centered">
+    <a href="#" class="close-button">&#10006;</a>
+    <h3 class="popupsub">오늘의 핫딜 주제!!</h3>
+    <p class="des">하나 있으면 나도 요리사가 되는 마법!!</p> 
+    <span class="title">에어프라이어 핫딜</span>
+    <span>~ Up to 70% OFF</span>
+    <!-- <a href="#" class="button">Learn More</a> -->
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+  $(function() {
+  $('.pop-up').hide();
+  $('.pop-up').fadeIn(700);
+  
+      $('.close-button').click(function (e) { 
+
+      $('.pop-up').fadeOut(200);
+      $('#overlay').removeClass('blur-in');
+      $('#overlay').addClass('blur-out');
+      e.stopPropagation();
+        
+    });
+ });
+</script>

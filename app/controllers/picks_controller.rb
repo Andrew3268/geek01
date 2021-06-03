@@ -15,7 +15,7 @@ class PicksController < ApplicationController
 
   def hashtags
     tag = Tag.find_by(name: params[:name])
-    @pagy, @picks = pagy(tag.picks, items: 20)
+    @pagy, @picks = pagy(tag.picks.order("created_at DESC"), items: 20)
   end
 
   # GET /picks/new
