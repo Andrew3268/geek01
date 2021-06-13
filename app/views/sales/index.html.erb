@@ -11,7 +11,7 @@
     <% if current_user && current_user.admin %>
       <%= render 'sales/sub_cat' %>
     <% end %>
-
+    
     <div class="product-border clearfix">
       <% @sales.each do |sale| %>
         <div class="card">
