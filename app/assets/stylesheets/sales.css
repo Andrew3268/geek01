@@ -22,14 +22,14 @@
 .featured-border .card .image-box img{object-fit:cover;border-radius:10px;}
 .featured-border .card .image-box .contain img{object-fit:contain;}
 .product-border .inner{padding:10px 15px;margin-top:27px;}
-.featured-border .inner{margin-top:20px;padding:0 15px;}
+.featured-border .inner{margin-top:10px;padding:0 15px;}
 .featured-border .inner span.source{font-size:10px;color:#ccc;}
 /*.featured-border .inner span.current_price{display:none;}*/
-.featured-border .inner{margin-top:20px;}
+/*.featured-border .inner{margin-top:20px;}*/
 .featured-border .inner p a{color:#3d3d3d;}
 .product-border .inner p{font-size:13px;margin:5px 0;word-break:keep-all;}
 .product-border .inner span.list_price{color:#ccc;text-decoration:line-through;}
-.product-border .inner span.current_price{font-size:20px;font-weight:600;color:#3d3d3d;}
+.product-border .inner span.current_price{font-size:20px;font-weight:600;color:#3d3d3d;position:absolute;bottom:7px;}
 .product-border .inner span.current_price span.source{font-size:11px;}
 .product-border .inner span.view_count{font-size:13px;color:#ccc;float:right;}
 
