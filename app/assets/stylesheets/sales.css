@@ -24,7 +24,7 @@
 .product-border .inner{padding:10px 15px;margin-top:27px;}
 .featured-border .inner{margin-top:20px;padding:0 15px;}
 .featured-border .inner span.source{font-size:10px;color:#ccc;}
-.featured-border .inner span.current_price{display:none;}
+/*.featured-border .inner span.current_price{display:none;}*/
 .featured-border .inner{margin-top:20px;}
 .featured-border .inner p a{color:#3d3d3d;}
 .product-border .inner p{font-size:13px;margin:5px 0;word-break:keep-all;}
@@ -70,7 +70,7 @@
 .show-wrap .featured-img-box .contain img{object-fit:contain;}
 .show-wrap .inner{float:left;width:50%;}
 .show-wrap .inner .btn p.hashtag{text-align:left;margin-top:10px;}
-.show-wrap .inner .source{font-size:13px;}
+.show-wrap .inner .source{font-size:12px;color:#ccc;}
 .show-wrap .inner p.f_title{margin-bottom:10px;font-size:20px;word-break:keep-all;}
 .show-wrap .inner .detail_info{}
 .show-wrap .inner .detail_info span.is{font-size:25px;color:#3d3d3d;text-decoration:underline;}
