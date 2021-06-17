@@ -25,8 +25,9 @@
           </div>
           <div class="inner">
             <p class="line-break-01" data-turbolinks="false"><%= link_to sale.s_title, sale%></p>
+            <span class="sale_current_price"><%= number_to_currency(sale.s_is_price, locale: :kr) %>원</span>
             <span class="list_price"><%= number_to_currency(sale.s_was_price, locale: :kr) %>원</span>
-            <span class="current_price"><%= number_to_currency(sale.s_is_price, locale: :kr) %>원</span>
+            
           </div>
           <% hotdeal_pct = 0 %>
           <% hotdeal_pct =  (sale.s_was_price - sale.s_is_price) / sale.s_was_price * 100 %>

@@ -14,16 +14,16 @@ class BridgeController < ApplicationController
 
   def half_deal
     # @sales_half = Sale.all.order("created_at DESC")
-    @sales_half = Sale.where(updated_at: 2.day.ago..DateTime.now).order("created_at DESC")
+    @sales_half = Sale.where(updated_at: 5.day.ago..DateTime.now).order("created_at DESC")
   end
 
   def under_deal
     # @sales_under = Sale.all.order("created_at DESC")
-    @sales_under = Sale.where(updated_at: 2.days.ago..DateTime.now).order("created_at DESC")
+    @sales_under = Sale.where(updated_at: 5.days.ago..DateTime.now).order("created_at DESC")
   end
 
   def sales
-    @pagy, @sales_index = pagy(Sale.where(updated_at: 2.days.ago..DateTime.now).order("created_at DESC"), items: 80)
+    @pagy, @sales_index = pagy(Sale.where(updated_at: 5.days.ago..DateTime.now).order("created_at DESC"), items: 80)
   end
 
   def delete_old_deal
