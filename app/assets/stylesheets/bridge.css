@@ -43,3 +43,10 @@ p.todays_deal_title{font-weight:100;display:inline;box-shadow:inset 0 -10px 0 rg
 #customers td p{word-break:keep-all;line-height:1.4;height:1.4em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;}
 #customers th{padding-top:12px;padding-bottom:12px;color:#08f;}
 
+
+/****** Search ******/
+.bridge_search{width:800px;margin:50px auto;}
+.bridge_search .search{}
+.bridge_search .search input{width:100%;padding:20px;border-radius:30px;}
+
+

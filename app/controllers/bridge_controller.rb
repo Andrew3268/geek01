@@ -30,4 +30,7 @@ class BridgeController < ApplicationController
     @sales_delete = Sale.all
   end
 
+  def search
+  end
+
 end

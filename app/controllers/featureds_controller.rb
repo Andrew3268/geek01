@@ -7,7 +7,10 @@ class FeaturedsController < ApplicationController
   def index
     @pagy, @featureds = pagy(Featured.all.order("created_at DESC"), items: 80)
     # @pagy, @featureds  = pagy(Featured.order("impressions_count DESC"), items: 80)
-
+    if params[:search]
+      @search_term = params[:search]
+      @featureds = @featureds.search_by(@search_term)
+    end
   end
 
   # GET /featureds/1

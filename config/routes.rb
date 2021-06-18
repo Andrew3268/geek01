@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get '/bridge/under_deal'
   get '/bridge/sales'
   get '/bridge/delete_old_deal'
+  get '/bridge/search'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,18 @@
+<%= render 'shared/header' %>
+<div class="index-wrap">
+  <div class="wrap">
+
+    <div class="bridge_search">
+
+      <div class="search">
+        <%= form_for "",url: featureds_path, role: "search", method: :get do %>
+          <%= text_field_tag :search, @search_term, placeholder: "무엇을 찾고 싶으세요?" %>
+        <% end %> 
+      </div>  
+      
+    </div>
+
+
+  
+  </div>
+</div>
