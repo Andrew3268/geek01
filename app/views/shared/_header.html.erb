@@ -8,11 +8,46 @@
         <div class='bottom stripe'></div>
       </button>
     </div>
+
     <div class='mobile_menu'>
+
+      <div class="search">
+        <%= form_for "",url: featureds_path, role: "search", method: :get do %>
+          <%= text_field_tag :search, @search_term, placeholder: "특별함을 찾아보세요." %>
+        <% end %> 
+        <!-- <p>인기 검색어: 선풍기, 키보드</p> -->
+      </div> 
+
       <nav>
         <ul>
           <!-- <li class='visited'><a href='/'>Sale</a></li> -->
-          <li><a href='/picks'>Editor's Pick</a></li>
+          <li class="clearfix">
+            <a href='/picks'>Editor's Pick</a>
+
+            <!-- No.1 -->
+            <!-- <ul class="sub_menu">
+              <li><a href='/picks/phashtag/tech'>- Tech</a></li>
+              <li><a href='/picks'>- Homeware</a></li>
+              <li><a href='/picks'>- Kitchen</a></li>
+              <li><a href='/picks'>- Fashion</a></li>
+              <li><a href='/picks'>- Pet Goods</a></li>
+              <li><a href='/picks'>- Outdoor</a></li>
+              <li><a href='/picks'>- featured</a></li>
+            </ul> -->
+
+            <!-- No.2 -->
+            <ul class="sub_menu2">
+              <li><a href='/picks/phashtag/tech'>Tech</a></li>
+              <li><a href='/picks'>Homeware</a></li>
+              <li><a href='/picks'>Kitchen</a></li>
+              <li><a href='/picks'>Fashion</a></li>
+              <li><a href='/picks'>Pet Goods</a></li>
+              <li><a href='/picks'>Outdoor</a></li>
+              <li><a href='/picks'>featured</a></li>
+            </ul>
+
+          </li>
+
           <li><a href='/bridge/sales'>Sale</a></li>
           <!-- <li><a href='/sales'>Sale</a></li> -->
           <!-- <li><a href='/themes'>Sale Guide</a></li> -->
@@ -20,6 +55,7 @@
         </ul>
       </nav>
     </div>
+
     <div class='logo'>
       <span><a href="/">Avenue71</a></span>
     </div>
