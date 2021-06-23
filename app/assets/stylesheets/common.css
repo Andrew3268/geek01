@@ -102,6 +102,7 @@ header .header-container .icons .block{display: inline-block;}
   .mobile_menu:before{margin:-10px 5px;}
   .mobile_menu .search{margin-top:30px;padding:0 15px;}
   .mobile_menu .search input{padding:15px;width:100%;border-radius:20px;}
+  .mobile_menu .search input::placeholder{font-size:15px;color:#000;}
   .mobile_menu nav{padding:20px 50px;}
   .mobile_menu nav ul li{margin:20px 0px;}
 
@@ -119,6 +120,16 @@ header .header-container .icons .block{display: inline-block;}
   .mobile_menu nav ul li a:before{height:23px !important;}
   
 }
+
+@media screen and (min-width:641px) and (max-width:1199px){
+  .mobile_menu{height:600px;}
+  .mobile_menu .search input{padding:15px;width:90%;border-radius:20px;margin:50px 5% 0 5%;}
+  .mobile_menu nav ul li ul.sub_menu2{margin-top:10px;}
+  .mobile_menu nav ul li ul.sub_menu2 li{float:left;width:50%;border:1px solid #fff;margin:-1px -1px 0 0;padding:10px;text-align:center;}
+  .mobile_menu nav ul li ul.sub_menu2 li a{text-decoration:none;}
+  .mobile_menu:before{margin:-15px 25px;}
+}
+
 @keyframes slide {
   0%{width:0;padding:0px 10px;margin:0px -5px;}
   80%{width:105%;padding:0px 10px;margin:0px -5px;}
