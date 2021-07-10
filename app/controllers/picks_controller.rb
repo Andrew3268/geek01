@@ -75,7 +75,7 @@ class PicksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pick_params
-      params.require(:pick).permit(:p_title, :p_link, :p_source, :p_hashtag, :p_image, :p_description, :p_spare_01)
+      params.require(:pick).permit(:p_title, :p_link, :p_source, :p_hashtag, :p_image, :p_description, :p_spare_01, :p_spare_02, :p_spare_03)
     end
 end
 

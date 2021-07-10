@@ -20,7 +20,16 @@
     <div class="pricing clearfix">
       <%= f.input :f_is_price, label: "현재가격" %>
       <!-- <%= f.input :f_was_price, label: "세일전 가격" %> -->
-      <%= f.input :f_spare_01, label: "평점" %>
+      <!-- <%= f.input :f_spare_01, label: "평점" %> -->
+
+      <div class="star_rating">
+        <%= f.input :f_spare_06, label: "평점 4.5" %>
+        <%= f.input :f_spare_07, label: "평점 4.0" %>
+        <%= f.input :f_spare_08, label: "평점 3.5" %>
+        <%= f.input :f_spare_09, label: "평점 3.0" %>
+      </div>
+
+
       <%= f.input :f_spare_02, label: "리뷰 수" %>
       <%= f.select :f_spare_04, options_for_select([["로켓배송", ""], "Yes"])%>
     </div>

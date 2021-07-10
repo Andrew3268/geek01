@@ -27,6 +27,17 @@
 .blog-container .card .card-body .tag a{color:#fff;}
 .blog-container .card .card-body .series{margin-top:5px;}
 .blog-container .card .card-body p{font-size:13px;margin:0 0 40px;}
+
+
+
+
+/*.blog-container .card .card-body .title_section{margin-top:10px;}
+.blog-container .card .card-body .title_section em.top_title{color:#ccc;}
+.blog-container .card .card-body .title_section em.middle_title{font-size:17px;}
+.blog-container .card .card-body .title_section em.bottom_title{font-size:17px;}*/
+
+
+
 .blog-container h4{margin:10px 0;font-size:27px;word-break:keep-all;height:4.5em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:3;}
 .blog-container .card .card-user{display:flex;align-items:center;margin-top:auto;}
 .blog-container .card .card-user .admin_management{margin-left:130px;}

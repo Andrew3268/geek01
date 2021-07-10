@@ -13,28 +13,54 @@
       <div class="image-box featured-img-box clearfix">
         <% if @featured.f_spare_03.present? %>
           <div class="contain">
-            <img src="<%= @featured.f_image %>" alt="<%= @featured.f_title %>" title="<%= @featured.f_title %>" />
+            <img class="main_img" src="<%= @featured.f_image %>" alt="<%= @featured.f_title %>" title="<%= @featured.f_title %>" />
           </div>
         <% else %>
-          <img src="<%= @featured.f_image %>" alt="<%= @featured.f_title %>" title="<%= @featured.f_title %>" />
+          <img class="main_img" src="<%= @featured.f_image %>" alt="<%= @featured.f_title %>" title="<%= @featured.f_title %>" />
         <% end %>
-
       </div>
 
       <div class="inner clearfix">
-        <% if @featured.f_source.present? %>
-          <span class="source">by <%= @featured.f_source %></span>
-        <% else %>
-          <span class="source">by 쿠팡</span>
-        <% end %>
+        <div class="inner_title">
+          <% if @featured.f_source.present? %>
+            <span class="source">by <%= @featured.f_source %></span>
+          <% else %>
+            <span class="source">by 쿠팡</span>
+          <% end %>
 
-        <p class="f_title"><%= @featured.f_title %></p>
-        <!-- <p class="f_title"><%= @featured.f_description %></p> -->
+          <p class="f_title"><%= @featured.f_title %></p>
+            
+          <div class="star_rating">
+            <% if @featured.f_spare_02.present? %>
+              <% if @featured.f_spare_06.present? %>
+                <img class="star_4_5" src="<%=asset_path 'star_4_5.png' %>" />
+                <em><%= @featured.f_spare_02 %>개의 상품평</em>
+              <% elsif @featured.f_spare_07.present? %>
+                <img class="star_4" src="<%=asset_path 'star_4.png' %>" />
+                <em><%= @featured.f_spare_02 %>개의 상품평</em>
+              <% elsif @featured.f_spare_08.present? %>
+                <img class="star_3_5" src="<%=asset_path 'star_3_5.png' %>" />
+                <em><%= @featured.f_spare_02 %>개의 상품평</em>
+              <% elsif @featured.f_spare_09.present? %>
+                <img class="star_3" src="<%=asset_path 'star_3.png' %>" />
+                <em><%= @featured.f_spare_02 %>개의 상품평</em>
+              <% elsif %>
+                <img class="star_5" src="<%=asset_path 'star_5.png' %>" />
+                <em><%= @featured.f_spare_02 %>개의 상품평</em>
+              <% end %>
+            <% end %>
+          </div>
+
+
+          <!-- <p class="f_title"><%= @featured.f_description %></p> -->
+        </div>
         
         <div class="detail_info clearfix">
           
-          <span class="is"><%= number_to_currency(@featured.f_is_price, locale: :kr) %>원</span>
-          <div class="info-box-box clearfix">
+          <span class="is"><%= number_to_currency(@featured.f_is_price, locale: :kr) %>원</span> <!--<% if @featured.f_spare_04.present? %>with  로켓배송<% end %>-->
+        
+
+          <!-- <div class="info-box-box clearfix">
 
             <% if @featured.f_source.present? %>
               <div class="info-box no-pang">
@@ -80,7 +106,8 @@
               </div>
            <% end %>
 
-          </div><!--./info-box-box-->
+          </div>
+ -->          
         </div><!--./detail_info-->
       
         <!-- Button Section -->
@@ -88,9 +115,10 @@
           <% if @featured.f_source.present? %>
             <a class="btn" target="_blank" href="<%= @featured.f_link %>"><%= @featured.f_source %>에서 구매하기</a>
           <% else %>
-            <a class="btn" target="_blank" href="<%= @featured.f_link %>">쿠팡에서 구매하기</a>
+            <a class="btn" target="_blank" href="<%= @featured.f_link %>">쿠팡에서 <% if @featured.f_spare_04.present? %>로켓배송으로<% end %>구매하기</a>
           <% end %>
         </div>
+
         <br />
         <div class="notice featured-notice">
           <% if @featured.f_source.present? %>

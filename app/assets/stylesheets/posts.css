@@ -119,7 +119,7 @@
 .contents-box .show_more_btn a{background:#C7B3E5;padding:10px 20px;color:#fff;border-radius:15px;}
 
 /* Footer */
-.footer{margin:100px 0 ;}
+/*.footer{margin:100px 0 ;}*/
 
 @media screen and (max-width:640px){
   .main-visual{margin-top:10px;}
