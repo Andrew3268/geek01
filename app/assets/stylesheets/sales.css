@@ -82,7 +82,7 @@
 .show-wrap .inner .detail_info .info-box{float:left;width:31.33%;margin:1%;padding:20px 10px;text-align:center;box-shadow:0 0 5px rgba(0,0,0,0.15);border-radius:15px;}
 .show-wrap .inner .detail_info .no-pang{width:48%;}
 .show-wrap .inner .star_rating{margin-bottom:15px;}
-.show-wrap .inner .star_rating img{height:20px;vertical-align:sub;}
+.show-wrap .inner .star_rating img{height:17px;vertical-align:sub;}
 .show-wrap .summary_title{margin-top:2em;}
 .show-wrap .receipt{height:120px;display:grid;grid-template-columns:2fr 1fr;}
 .show-wrap .receipt__grid1 p{color:#3d3d3d;}
@@ -100,6 +100,7 @@
 .show-wrap .admin{text-align:left;}
 .show-wrap .notice{margin-top:8px;}
 .show-wrap .notice span{display:block;font-size:11px;color:#ccc;}
+.show-wrap .notice span a{color:#ccc;}
 .navbar-fixed{top:0;left:0;z-index:100;position:fixed;width:100%;background:#fff;padding:10px;box-shadow:0 0 20px rgba(0, 0, 0, 0.1);text-align:center;}
 
 

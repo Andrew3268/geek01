@@ -18,6 +18,25 @@ class FeaturedsController < ApplicationController
   def show
     #without IP_adress
     impressionist(@featured)
+    set_meta_tags title: @featured.f_title,
+                  # site: 'Aveneu71::감성 큐레이팅 Shop',
+                  revierse: true,
+                  description: @featured.f_title,
+                  keywords: '쿠팡, 아마존, 알리익스프레스, 직구, 아이디어상품, 홈인테리어, 인테리어소품, 집꾸미기, 방꾸미기, 자취방꾸미기, 홈데코, 주방인테리어',
+                  # twitter: {
+                  #   card: "summary",
+                  #   site: "@aveneu71",
+                  #   title: @featured.f_title,
+                  #   description: @featured.f_title,
+                  #   image: @featured.f_image
+                  # },
+                  og: {
+                    title: @featured.f_title,
+                    description: @featured.f_title,
+                    type: 'website',
+                    url: post_url(@featured),
+                    image: @featured.f_image
+                  }
     
     #with IP_adress
     # impressionist(@featured, nil, unique: [:ip_address])

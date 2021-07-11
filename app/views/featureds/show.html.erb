@@ -29,7 +29,7 @@
           <% end %>
 
           <p class="f_title"><%= @featured.f_title %></p>
-            
+          
           <div class="star_rating">
             <% if @featured.f_spare_02.present? %>
               <% if @featured.f_spare_06.present? %>
@@ -60,54 +60,55 @@
           <span class="is"><%= number_to_currency(@featured.f_is_price, locale: :kr) %>원</span> <!--<% if @featured.f_spare_04.present? %>with  로켓배송<% end %>-->
         
 
-          <!-- <div class="info-box-box clearfix">
+          <% if current_user && current_user.admin %>
+            <div class="info-box-box clearfix">
 
-            <% if @featured.f_source.present? %>
-              <div class="info-box no-pang">
-              <p>평점</p>
-              <% if @featured.f_spare_01.present? %>
-                <span><%= @featured.f_spare_01 %> / 5.0</span>
-              <% else %>
-                <span> - </span>
-              <% end %>
-              </div>
-              <div class="info-box no-pang">
-                <p>리뷰</p>
-                <% if @featured.f_spare_02.present? %>
-                  <span><%= @featured.f_spare_02 %> +</span>
-                <% else %>
-                  <span> - </span>
-                <% end %>
-              </div>
-            <% else %>
-              <div class="info-box">
+              <% if @featured.f_source.present? %>
+                <div class="info-box no-pang">
                 <p>평점</p>
                 <% if @featured.f_spare_01.present? %>
                   <span><%= @featured.f_spare_01 %> / 5.0</span>
                 <% else %>
                   <span> - </span>
                 <% end %>
-              </div>
-              <div class="info-box">
-                <p>리뷰</p>
-                <% if @featured.f_spare_02.present? %>
-                  <span><%= @featured.f_spare_02 %> +</span>
-                <% else %>
-                  <span> - </span>
-                <% end %>
-              </div>
-              <div class="info-box">
-                <p>로켓배송</p>
-                <% if @featured.f_spare_04.present? %>
-                  <span>YES</span>
-                <% else %>
-                  <span>-</span>
-                <% end %>
-              </div>
-           <% end %>
-
-          </div>
- -->          
+                </div>
+                <div class="info-box no-pang">
+                  <p>리뷰</p>
+                  <% if @featured.f_spare_02.present? %>
+                    <span><%= @featured.f_spare_02 %> +</span>
+                  <% else %>
+                    <span> - </span>
+                  <% end %>
+                </div>
+              <% else %>
+                <div class="info-box">
+                  <p>평점</p>
+                  <% if @featured.f_spare_01.present? %>
+                    <span><%= @featured.f_spare_01 %> / 5.0</span>
+                  <% else %>
+                    <span> - </span>
+                  <% end %>
+                </div>
+                <div class="info-box">
+                  <p>리뷰</p>
+                  <% if @featured.f_spare_02.present? %>
+                    <span><%= @featured.f_spare_02 %> +</span>
+                  <% else %>
+                    <span> - </span>
+                  <% end %>
+                </div>
+                <div class="info-box">
+                  <p>로켓배송</p>
+                  <% if @featured.f_spare_04.present? %>
+                    <span>YES</span>
+                  <% else %>
+                    <span>-</span>
+                  <% end %>
+                </div>
+             <% end %>
+            </div>
+          <% end %>
+ 
         </div><!--./detail_info-->
       
         <!-- Button Section -->
@@ -122,12 +123,11 @@
         <br />
         <div class="notice featured-notice">
           <% if @featured.f_source.present? %>
-            <span>"<%= @featured.f_title %>"의 가격과 평점은 변경될 수 있으며 빠르게 품절될 수도 있어요.</span>
-            <span>"Ave71"은 상품 판매의 당사자가 아닙니다.</span>
+            <span>- 가격과 평점이 다른가요? <a href="/bridge/about_us">[자세히 보기]</a></span>
+            <span>- "Ave71"은 상품 판매의 당사자가 아닙니다.</span>
           <% else %>
-            <span>"<%= @featured.f_title %>"의 가격과 평점은 변경될 수 있으며 빠르게 품절될 수도 있어요.</span>
-            
-            <span>"Ave71"은 상품 판매의 당사자가 아니며 파트너스 활동을 통해 일정의 수수료를 지급받아요.</span>
+            <span>- 가격과 평점이 다른가요? <a href="/bridge/about_us">[자세히 보기]</a></span>
+            <span>- "Ave71"은 상품 판매의 당사자가 아니며 파트너스 활동을 통해 일정의 수수료를 지급받아요.</span>
           <% end %>
         </div>
         <br />
