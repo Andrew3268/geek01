@@ -50,3 +50,14 @@ p.todays_deal_title{font-weight:100;display:inline;box-shadow:inset 0 -10px 0 rg
 .bridge_search .search input{width:100%;padding:20px;border-radius:30px;}
 
 
+
+
+
+
+/****** New Index Test ******/
+.npick_container{}
+.npick_container .inner{}
+.npick_container .npick_box{float:left;width:33%;border:1px solid;}
+.npick_container .npick_box img{float:left;width:33%;border:1px solid;}
+
+

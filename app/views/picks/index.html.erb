@@ -4,7 +4,7 @@
   <div class="wrap">
 
     <div class="visual clearfix">
-      <p>지극히 주관적인</p>
+      <p>감성 큐레이터의 지극히 주관적인</p>
       <h2>Editor's Picks</h2>
       <%= render 'picks/categories' %>
     </div>
@@ -43,9 +43,12 @@
               <p class="tag series"><%= render_with_phashtags(pick.p_hashtag) %></p>
             <% end %>
               
-            <a class="to_tag" href="/featureds/fhashtag/<%= pick.p_link %>"><h4><%= pick.p_title %></h4></a>
+            <a class="to_tag a_title" href="/featureds/fhashtag/<%= pick.p_link %>"><h4><%= pick.p_title %></h4></a>
+            <!-- <a class="to_tag" href="/featureds/fhashtag/<%= pick.p_link %>">+ 더보기</a> -->
 
-           <!--  <div class="title_section">
+
+
+           <!-- <div class="title_section">
               <a class="to_tag" href="/featureds/fhashtag/<%= pick.p_link %>"><em class="top_title"><%= pick.p_spare_02 %></em></a>              
               <a class="to_tag" href="/featureds/fhashtag/<%= pick.p_link %>"><em class="middle_title"><%= pick.p_spare_03 %></em></a>              
               <a class="to_tag" href="/featureds/fhashtag/<%= pick.p_link %>"><em class="bottom_title"><%= pick.p_title %></em></a>              
@@ -67,6 +70,7 @@
                 <% end %>
               </div>
             </div>
+
           </div>
         </div>
       <% end %>   

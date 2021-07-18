@@ -83,6 +83,7 @@
 .show-wrap .inner .detail_info .no-pang{width:48%;}
 .show-wrap .inner .star_rating{margin-bottom:15px;}
 .show-wrap .inner .star_rating img{height:17px;vertical-align:sub;}
+.show-wrap .inner .star_rating em{vertical-align:middle;}
 .show-wrap .summary_title{margin-top:2em;}
 .show-wrap .receipt{height:120px;display:grid;grid-template-columns:2fr 1fr;}
 .show-wrap .receipt__grid1 p{color:#3d3d3d;}
