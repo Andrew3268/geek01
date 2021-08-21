@@ -94,7 +94,7 @@
 .show-wrap .total_price{font-size:20px;color:#C7B3E5;font-weight:600;}
 .show-wrap .total_text{font-size:20px;}
 .show-wrap .btn-box{text-align:center;margin-top:40px;}
-.show-wrap .btn-box a.btn{border:2px solid black;border-radius:100px;padding:10px 20px;font-size:14px;background:#a284e0;box-shadow:inset 7px 2px 0 white, inset -0.5px 0.5px 0 white, inset -5px -3px 0 #a284e0;color:#fff;position:relative;display:block;}
+.show-wrap .btn-box a.btn{border:2px solid black;border-radius:100px;padding:10px 20px;font-size:14px;/*background:#a284e0;*/background:#fff000;box-shadow:inset 7px 2px 0 white, inset -0.5px 0.5px 0 white, inset -5px -3px 0 #fff000;color:#000;position:relative;display:block;font-weight:bold;}
 .show-wrap .title{}
 .show-wrap .title h2{font-size:15px;font-weight:300;word-break:keep-all;}
 .show-wrap .title span{font-size:13px;}
