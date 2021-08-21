@@ -61,7 +61,7 @@ header .header-container .head_nav ul{text-align:center;}
 header .header-container .head_nav ul .visited a:after{content:"";position:absolute;width:100%;height:4px;background:black;margin:15.5px 0;right:0;}
 header .header-container .head_nav ul li{display:inline-block;margin:0 15px;}
 header .header-container .head_nav ul li a{text-transform:uppercase;font-weight:700;letter-spacing:0.8px;position:relative;}
-header .header-container .head_nav ul li a:after, .visual .category-pc ul li a:after{content:"";position:absolute;width:0%;height:4px;background:black;transition:0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);margin:15.5px 0;right:0;}
+header .header-container .head_nav ul li a:after, .visual .category-pc ul li a:after{content:"";position:absolute;width:0%;height:4px;/*background:black;*/background:#fff000;transition:0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);margin:15.5px 0;right:0;}
 header .header-container .head_nav ul li a:hover:after, .visual .category-pc ul li a:hover:after{width:100%;left:0;}
 header .header-container .icons{min-width:85px;}
 header .header-container .icons a{margin:0 10px 0 0;display:block;height:27px;width:27px;}
@@ -71,7 +71,7 @@ header .header-container .icons .block{display: inline-block;}
 .mobile_menu:before{content:"";position:absolute;width:0;height:0;border-style:solid;border-width:0 15px 15px 15px;border-color:transparent transparent #000000 transparent;margin:-10px 35px;}
 .mobile_menu nav{padding:50px;}
 .mobile_menu nav ul .slide a{opacity:1;position:relative;animation:hidecolor 0.5s ease;}
-.mobile_menu nav ul .slide a:before{content:"";position:absolute;background:#C7B3E5;width:0%;height:35px;animation:slide 0.5s ease;}
+.mobile_menu nav ul .slide a:before{content:"";position:absolute;/*background:#C7B3E5;*/background:#fff000;width:0%;height:35px;animation:slide 0.5s ease;}
 .mobile_menu nav ul li{margin:30px 0px;}
 .mobile_menu nav ul li a{font-family:"Montserrat", sans-serif;opacity:0;font-size:25px;font-weight:600;padding:10px 0px;color:white;text-decoration:underline 5px;}
 @media only screen and (max-width: 1100px) {
@@ -104,7 +104,7 @@ header .header-container .icons .block{display: inline-block;}
   .mobile_menu .search{margin-top:30px;padding:0 15px;}
   .mobile_menu .search input{padding:15px;width:100%;border-radius:20px;}
   .mobile_menu .search input::placeholder{font-size:15px;color:#000;}
-  .mobile_menu nav{padding:20px 50px;}
+  .mobile_menu nav{padding:20px 30px;}
   .mobile_menu nav ul li{margin:20px 0px;}
 
   /* No.1 */
@@ -117,7 +117,7 @@ header .header-container .icons .block{display: inline-block;}
   .mobile_menu nav ul li ul.sub_menu2 li{float:left;width:50%;border:1px solid #fff;margin:-1px -1px 0 0;padding:10px;text-align:center;}
   .mobile_menu nav ul li ul.sub_menu2 li a{text-decoration:none;}
 
-  .mobile_menu nav ul li a{font-size:18px;}
+  .mobile_menu nav ul li a{font-size:17px;}
   .mobile_menu nav ul li a:before{height:23px !important;}
   
 }
@@ -180,7 +180,7 @@ header .header-container .icons .block{display: inline-block;}
   /*.visual .category-mobile ul.left{float:left;width:80%;}*/
   .visual .category-mobile ul.picks-left{width:100%;}
   .visual .category-mobile ul.right{float:left;width:20%;text-align:center;}
-  .visual .category-mobile ul li a{font-size:15px;background:rgba(241,236,249,0.4);padding:10px;border-radius:10px;}
+  .visual .category-mobile ul li a{font-size:15px;/*background:rgba(241,236,249,0.4);*/padding:10px;border-radius:10px;background:#fff000;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
