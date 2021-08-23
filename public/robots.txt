@@ -15,5 +15,6 @@ Disallow: /users/sign_up
 Disallow: /bridge/delete_old_deal
 Disallow: /bridge/manage_hashtags
 Disallow: /bridge/top_100
+Disallow: /bridge/search
 
 
