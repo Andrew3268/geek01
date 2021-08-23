@@ -1,5 +1,8 @@
 # See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
 
+User-agent: *
+Allow:/
+
 Disallow: /sales
 Disallow: /sales/new
 Disallow: /sales/edit
@@ -11,7 +14,6 @@ Disallow: /picks/edit
 Disallow: /picks/show
 Disallow: /users/sign_in
 Disallow: /users/sign_up
-
 Disallow: /bridge/delete_old_deal
 Disallow: /bridge/manage_hashtags
 Disallow: /bridge/top_100
