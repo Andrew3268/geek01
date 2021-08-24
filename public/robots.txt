@@ -1,9 +1,7 @@
 # See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
 
 User-agent: *
-Allow:/
 
-Disallow: /sales
 Disallow: /sales/new
 Disallow: /sales/edit
 Disallow: /featureds
