@@ -12,6 +12,7 @@ Disallow: /picks/edit
 Disallow: /picks/show
 Disallow: /users/sign_in
 Disallow: /users/sign_up
+Disallow: /users/eidt
 Disallow: /bridge/delete_old_deal
 Disallow: /bridge/manage_hashtags
 Disallow: /bridge/top_100
